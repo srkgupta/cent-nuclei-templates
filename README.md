@@ -1,8 +1,7 @@
 # cent-nuclei-templates
 Cent Nuclei Templates generated through the [cent tool](https://github.com/xm1k3/cent)
 
-
-This repo contains the final list of custom nuclei templates generated from the [cent tool](https://github.com/xm1k3/cent)
+This repo contains over 23,000 custom nuclei templates generated from the [cent tool](https://github.com/xm1k3/cent)
 
 Note:
 - All the invalid templates which are not compatible with the latest nuclei are removed.
