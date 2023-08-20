@@ -18,6 +18,6 @@ git clone https://github.com/srkgupta/cent-nuclei-templates.git
 
 - Run the nuclei templates:
 ```
-nuclei -u https://example.com -t ./cent-nuclei-templates -tags cve
-nuclei -l urls.txt -t ./cent-nuclei-templates -tags cve
+nuclei -u https://example.com -t ./cent-nuclei-templates/templates -tags cve
+nuclei -l urls.txt -t ./cent-nuclei-templates/templates -tags cve
 ```
