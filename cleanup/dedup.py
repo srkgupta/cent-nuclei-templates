@@ -8,10 +8,10 @@ Phases:
   3. Remove internal content duplicates (same file hash, keep first alphabetically).
 
 Run from anywhere:
-  python3 /home/chitti/pentest/cent-nuclei-templates/dedup.py
+  python3 cleanup/dedup.py
 
 Dry-run (no deletions):
-  python3 /home/chitti/pentest/cent-nuclei-templates/dedup.py --dry-run
+  python3 cleanup/dedup.py --dry-run
 """
 
 import argparse
@@ -20,8 +20,8 @@ import os
 import sys
 from pathlib import Path
 
-SCRIPT_DIR = Path(__file__).parent.resolve()
-CUSTOM_DIR = SCRIPT_DIR / "templates"
+REPO_ROOT = Path(__file__).parent.parent.resolve()
+CUSTOM_DIR = REPO_ROOT / "templates"
 CORE_DIR = Path("/home/chitti/nuclei-templates")
 EMPTY_MD5 = "d41d8cd98f00b204e9800998ecf8427e"
 
