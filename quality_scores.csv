@@ -1,17 +1,7 @@
 file,severity,score,tier,flags
-cve-2017-12629-2909.yaml,critical,35,2-review,cve_tagged_missing_cve_id|single_weak_word_matcher
-log4shell.yaml,critical,35,2-review,cve_tagged_missing_cve_id|single_weak_word_matcher
-netgear-wnap320-rce.yaml,critical,40,2-review,single_weak_word_matcher
-seeyon_fastjson.yaml,critical,40,2-review,single_weak_word_matcher
-seeyon_log4j.yaml,critical,40,2-review,single_weak_word_matcher
-tableau-log4j-rce.yaml,critical,40,2-review,single_weak_word_matcher
-ueditor-uploadVul.yaml,critical,40,2-review,single_weak_word_matcher
-vmware-workspace-one-log4j-rce.yaml,critical,40,2-review,single_weak_word_matcher
 cve-2017-3881-3017.yaml,critical,45,2-review,cve_tagged_missing_cve_id|no_http_block
 cve-2020-7247-5247.yaml,critical,45,2-review,cve_tagged_missing_cve_id|no_http_block
 CVE-2018-0101.yaml,critical,50,3-acceptable,cve_tagged_missing_cve_id
-apache-solr-log4j-CVE-2021-44228.yaml,critical,50,3-acceptable,single_weak_word_matcher|active_probe_path
-cisco-rv-series-rce.yaml,critical,50,3-acceptable,single_weak_word_matcher
 cve-2017-1000486-2847.yaml,critical,50,3-acceptable,cve_tagged_missing_cve_id
 cve-2017-12149-2883.yaml,critical,50,3-acceptable,cve_tagged_missing_cve_id
 cve-2017-5638-3032.yaml,critical,50,3-acceptable,cve_tagged_missing_cve_id
@@ -19,7 +9,6 @@ cve-2020-15505-4613.yaml,critical,50,3-acceptable,cve_tagged_missing_cve_id
 cve-2021-26855-5890.yaml,critical,50,3-acceptable,cve_tagged_missing_cve_id
 exposed-adb-7281.yaml,critical,50,3-acceptable,no_http_block
 ftp-default-creds.yaml,critical,50,3-acceptable,no_http_block
-jamf-pro-log4j.yaml,critical,50,3-acceptable,cve_tagged_missing_cve_id|single_weak_word_matcher|has_regex_matcher
 malware-aar.yaml,critical,50,3-acceptable,no_http_block
 malware-adzok.yaml,critical,50,3-acceptable,no_http_block
 malware-alfa.yaml,critical,50,3-acceptable,no_http_block
@@ -193,7 +182,6 @@ malware_zeghost.yaml,critical,50,3-acceptable,no_http_block
 rce-CVE-2021-21224.yaml,critical,50,3-acceptable,no_http_block
 saprouter-information-leak.yaml,critical,50,3-acceptable,no_http_block
 vsftpd-detection-11075.yaml,critical,50,3-acceptable,no_http_block
-websphere-portal-preauth-ssrf.yaml,critical,50,3-acceptable,single_weak_word_matcher|active_probe_path
 abtest-39d3fe7a9802926d9690c0be584452cd.yaml,critical,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 angwp-eae84d4a5d4fc7d02f96307ba7a70470.yaml,critical,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 buffalo-config-injection-798.yaml,critical,55,3-acceptable,
@@ -263,7 +251,6 @@ CVE-2008-1982.yaml,critical,70,3-acceptable,strong_and_matchers|single_weak_word
 CVE-2010-0673.yaml,critical,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2012-3578.yaml,critical,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2013-3530.yaml,critical,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2013-3532.yaml,critical,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2014-7957.yaml,critical,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2014-8363.yaml,critical,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2017-1002018.yaml,critical,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
@@ -670,10 +657,6 @@ airflow-default-credentials.yaml,critical,75,4-good,strong_and_matchers
 amoveo-b8532cdcf9ef0bd37dc561ec3b57765a.yaml,critical,75,4-good,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|active_probe_path
 appius-bf599e74d0a9a1997342011bad00ecac.yaml,critical,75,4-good,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|active_probe_path
 area53-e32369078271787c04ab4706a1bfb34e.yaml,critical,75,4-good,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|active_probe_path
-canvas-0ffb331a7a33f2a0f17418445dba91b8.yaml,critical,75,4-good,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|active_probe_path
-canvas-1497650f3b2e1de89a575d8c543762a8.yaml,critical,75,4-good,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|active_probe_path
-canvas-85dba4da99018ec5002875cc774204af.yaml,critical,75,4-good,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|active_probe_path
-canvas-e6386d75e49e33bee40cf71616934c2d.yaml,critical,75,4-good,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|active_probe_path
 cve-2009-0545-1407.yaml,critical,75,4-good,cve_tagged_missing_cve_id|has_regex_matcher|active_probe_path
 cve-2012-0392-2131.yaml,critical,75,4-good,cve_tagged_missing_cve_id|has_regex_matcher|active_probe_path
 cve-2017-6361-3049.yaml,critical,75,4-good,active_probe_path
@@ -1236,7 +1219,6 @@ cve-2020-35489-5039.yaml,critical,85,4-good,cve_tagged_missing_cve_id|strong_and
 cve-2020-35729-5064.yaml,critical,85,4-good,cve_tagged_missing_cve_id|active_probe_method
 cve-2020-35846-5093.yaml,critical,85,4-good,cve_tagged_missing_cve_id|active_probe_method
 cve-2021-25646-5812.yaml,critical,85,4-good,cve_tagged_missing_cve_id|strong_and_matchers|has_regex_matcher
-skywalking-log4j-rce.yaml,critical,85,4-good,strong_and_matchers|single_weak_word_matcher|has_regex_matcher
 tongda_bypass_login.yaml,critical,85,4-good,strong_and_matchers|active_probe_path
 wordpress-woocommerce-sqli-11344.yaml,critical,85,4-good,strong_and_matchers|active_probe_path
 CVE-2013-20002.yaml,critical,90,4-good,strong_and_matchers|single_weak_word_matcher|active_probe_path
@@ -1331,13 +1313,8 @@ cve-2019-11581-3751.yaml,critical,100,4-good,cve_tagged_missing_cve_id|strong_an
 cve-2020-13942-4531.yaml,critical,100,4-good,cve_tagged_missing_cve_id|strong_and_matchers|has_regex_matcher|active_probe_method
 cve-2021-27651-5919.yaml,critical,100,4-good,cve_tagged_missing_cve_id|strong_and_matchers|has_regex_matcher|active_probe_path
 nacos-unauth.yaml,critical,100,4-good,strong_and_matchers|has_regex_matcher|active_probe_path
-cve-2017-3506-3006.yaml,high,35,2-review,cve_tagged_missing_cve_id|single_weak_word_matcher
-cve-2017-9506-3091.yaml,high,35,2-review,cve_tagged_missing_cve_id|single_weak_word_matcher
-header-blind-ssrf.yaml,high,40,2-review,single_weak_word_matcher
-xxe.yaml,high,40,2-review,single_weak_word_matcher
 CVE-2020-7048.yaml,high,45,2-review,or_condition_matchers|active_probe_path
 cve-2015-3306-2506.yaml,high,45,2-review,cve_tagged_missing_cve_id|no_http_block
-oob.yaml,high,45,2-review,or_condition_matchers|single_weak_word_matcher|has_regex_matcher|active_probe_path
 symfony-debugmode-10623.yaml,high,45,2-review,or_condition_matchers|active_probe_path
 time-sqlinjection-uri-finder.yaml,high,45,2-review,or_condition_matchers|active_probe_path
 JeeSite-default-login.yaml,high,50,3-acceptable,single_weak_word_matcher
@@ -1349,12 +1326,8 @@ extra-secrets.yaml,high,50,3-acceptable,no_http_block
 github-recovery-code.yaml,high,50,3-acceptable,no_http_block
 secrets-in-files-more.yaml,high,50,3-acceptable,no_http_block
 secrets-in-files.yaml,high,50,3-acceptable,no_http_block
-wp-plugin-canto-ssrf.yaml,high,50,3-acceptable,single_weak_word_matcher|active_probe_path
 yongyou-jdbcRead.yaml,high,50,3-acceptable,single_weak_word_matcher
 yongyou-nc-beanshell-rce.yaml,high,50,3-acceptable,single_weak_word_matcher
-yongyou-ssrf-11745.yaml,high,50,3-acceptable,single_weak_word_matcher|active_probe_path
-backup-8ad936e732cb91978641173869e5a894.yaml,high,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
-blind-rce.yaml,high,55,3-acceptable,single_weak_word_matcher|has_regex_matcher
 blind-xxe.yaml,high,55,3-acceptable,
 booked-cc63b18b15f6ecc630ccd836a52175c4.yaml,high,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 brizy-780b37a7fb841cc266ad22e214a8e4dd.yaml,high,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
@@ -1363,7 +1336,6 @@ custom-cast-image-admin-creds.yaml,high,55,3-acceptable,
 custom-non-admin-creds-pentaho.yaml,high,55,3-acceptable,
 custom-ricoh-admin-creds.yaml,high,55,3-acceptable,
 cve-2019-15858-3892.yaml,high,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
-elasticsearch-log4j.yaml,high,55,3-acceptable,single_weak_word_matcher|has_regex_matcher
 gantry-26331f1e23aa3cae2c716a0d19223272.yaml,high,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 gotmls-3e47425b2ba20e34c0f2cb56a6c376dc.yaml,high,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 ilive-9786f059ad1635e3b00d580320ff7a68.yaml,high,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
@@ -1374,10 +1346,8 @@ mainwp-f91b9d765bf63bf968f54310cd7a063a.yaml,high,55,3-acceptable,cve_tagged_mis
 nexus-default-password.yaml,high,55,3-acceptable,
 open-proxy-localhost-9292.yaml,high,55,3-acceptable,
 param-xss.yaml,high,55,3-acceptable,or_condition_matchers|active_probe_path
-player-00391380ee9201ad95b619bcaf803c12.yaml,high,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 rockmongo-default-credentials.yaml,high,55,3-acceptable,
 stats-cde48d0ff95596a058209ef9a78a6efd.yaml,high,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
-stream-f639fe6745930d7bf95e9d1ea29b80d8.yaml,high,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 technology-shell.yaml,high,55,3-acceptable,
 top-10-53cf2b266c8eb72d0b8910d464229010.yaml,high,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 tutor-9f10ac0f7da4fe9248fce362c2ae8a39.yaml,high,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
@@ -1505,11 +1475,6 @@ CVE-2019-20354.yaml,high,70,3-acceptable,has_regex_matcher
 CVE-2019-20360.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2019-9574.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2020-15535.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2020-35936.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2020-35937.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2020-35938.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2020-35939.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2020-36669.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2020-36714.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2020-5391.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2020-6753.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
@@ -1520,7 +1485,6 @@ CVE-2021-24390.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_ma
 CVE-2021-24396.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2021-24494.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2021-24755.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2021-24772.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2021-24831.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2021-25054.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2021-25073.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
@@ -1555,7 +1519,6 @@ CVE-2023-23790.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_ma
 CVE-2023-23861.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2023-25800.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2023-25990.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2023-2744.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2023-27440.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2023-27450.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2023-3133.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
@@ -1774,7 +1737,6 @@ dc-woocommerce-multi-vendor-9752280dc0d291246a1efc563215b76c.yaml,high,70,3-acce
 debug-bar-elasticpress-15b946910453a6b83de011960156e46f.yaml,high,70,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|readme_only_path
 delucks-seo-f80e366c5a28b938da962786875e896e.yaml,high,70,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|readme_only_path
 devformatter-7034dfb49efc5253224841c8a4fb2382.yaml,high,70,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|readme_only_path
-discuz-downremoteimg-ssrf.yaml,high,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|active_probe_path
 disqus-comment-system-5da3e3f08e0a7f75ba15cada14e76cc1.yaml,high,70,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|readme_only_path
 donate-with-qrcode-323bdd3633cb652e67eb0962ced13eb5.yaml,high,70,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|readme_only_path
 double-opt-in-for-download-690cc06f4a45f986a005776e5ba03b25.yaml,high,70,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|readme_only_path
@@ -2475,9 +2437,6 @@ aspose-importer-exporter-file-download.yaml,high,75,4-good,active_probe_path
 aspose-words-exporter-file-download.yaml,high,75,4-good,active_probe_path
 awake-830e98587267dfe9506ac2ec99b23b91.yaml,high,75,4-good,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|active_probe_path
 awake-9cc56d06a4d121ae41a9640ce075b8a5.yaml,high,75,4-good,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|active_probe_path
-bridge-12a6cd2811fdd36606970cd169148a29.yaml,high,75,4-good,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|active_probe_path
-bridge-bafd922cd2f6829dbc0fb3d982540daa.yaml,high,75,4-good,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|active_probe_path
-bridge-f02b8ca455d4e1187012e5ee20aa9623.yaml,high,75,4-good,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|active_probe_path
 brightcove-takeover-783.yaml,high,75,4-good,active_probe_path
 chanjet-CRM-sqli.yaml,high,75,4-good,active_probe_path
 cnnvd-200705-315-1036.yaml,high,75,4-good,active_probe_path
@@ -2550,8 +2509,6 @@ myriad-e7ede6314c209b97480a8f0916dbaa81.yaml,high,75,4-good,cve_tagged_missing_c
 nagios-default-credential.yaml,high,75,4-good,active_probe_path
 niushop-sqli.yaml,high,75,4-good,active_probe_path
 nuxt-path-traversal.yaml,high,75,4-good,active_probe_path
-oob_sqli-2.yaml,high,75,4-good,strong_and_matchers|single_weak_word_matcher|has_regex_matcher
-oob_sqli.yaml,high,75,4-good,strong_and_matchers|single_weak_word_matcher|has_regex_matcher
 pma_unauth.yaml,high,75,4-good,active_probe_path
 product-input-fields-for-woocommerce-file-download.yaml,high,75,4-good,active_probe_path
 putty-user-keyfile.yaml,high,75,4-good,active_probe_path
@@ -4601,7 +4558,6 @@ CVE-2023-37885.yaml,high,100,4-good,strong_and_matchers|active_probe_path
 Weaver-LoginBypass.yaml,high,100,4-good,has_regex_matcher|active_probe_path|active_probe_method
 nps-default-password-9147.yaml,high,100,4-good,strong_and_matchers|active_probe_method
 wordpress-wpcourses-info-disclosure-11369.yaml,high,100,4-good,strong_and_matchers|has_regex_matcher|active_probe_path
-ssrf-blind-host.yaml,medium,40,2-review,single_weak_word_matcher
 cve-2018-8006-3631.yaml,medium,45,2-review,cve_tagged_missing_cve_id|single_weak_word_matcher|active_probe_path
 express-lfr-post.yaml,medium,45,2-review,or_condition_matchers|active_probe_path
 CVE-2016-6210.yaml,medium,50,3-acceptable,no_http_block
@@ -4631,7 +4587,6 @@ chaty-b420920b62c87e527f3e61d19ed6d3b0.yaml,medium,55,3-acceptable,cve_tagged_mi
 clicky-1db4d2792dc9db1114976b84c53e19c5.yaml,medium,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 cooked-d66f68a0ec614d89911ad9240d07ea30.yaml,medium,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 cve-2017-7529-3066.yaml,medium,55,3-acceptable,
-erp-55e583838a614e1ef923217f01a3ba80.yaml,medium,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 eshop-aa3c1c94beb1fa886b55ca82ed010b85.yaml,medium,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 falang-25a302618a7f76696a2ec27857f0ff9f.yaml,medium,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 faq-wd-185c020d775c2ee0e182c50085e288f3.yaml,medium,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
@@ -4654,8 +4609,6 @@ mailin-cacb72ab57bf76af2d0839cc30757202.yaml,medium,55,3-acceptable,cve_tagged_m
 mainwp-8bf9c29afe8c1d68cc909fbc8bbfc350.yaml,medium,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 my-wp-0c8600821eca101903a60a63a4f384e7.yaml,medium,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 mycred-24bd66bd3e5bf279792175df9ac21b29.yaml,medium,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
-player-29be52a9fc72274049c178f42578b7e8.yaml,medium,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
-player-ba8b9782f38e894e0a990df38f637a83.yaml,medium,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 pods-88d06f3ec2414e4d03967fbf6035f9b2.yaml,medium,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 qubely-c8b4a71fd3fce286f78e36908032ccd3.yaml,medium,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
 qubely-de6d4037f45de8823a9b7377e60b51b2.yaml,medium,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
@@ -4704,7 +4657,6 @@ cve-2019-8446-4247.yaml,medium,60,3-acceptable,cve_tagged_missing_cve_id
 cve-2020-23517-4777.yaml,medium,60,3-acceptable,cve_tagged_missing_cve_id|active_probe_path
 cve-2020-24550-4814.yaml,medium,60,3-acceptable,cve_tagged_missing_cve_id|active_probe_path
 cve-2020-28208-4980.yaml,medium,60,3-acceptable,cve_tagged_missing_cve_id
-cve-2020-6308-5219.yaml,medium,60,3-acceptable,cve_tagged_missing_cve_id|single_weak_word_matcher|active_probe_method
 cve-2021-27132-5893.yaml,medium,60,3-acceptable,cve_tagged_missing_cve_id|active_probe_path
 cve-2021-27905-5931.yaml,medium,60,3-acceptable,cve_tagged_missing_cve_id
 cve-2021-31537-6087.yaml,medium,60,3-acceptable,cve_tagged_missing_cve_id|active_probe_path
@@ -4754,7 +4706,6 @@ CVE-2014-4593.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_m
 CVE-2014-6230.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2014-7956.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2014-8364.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2014-8584.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2015-2039.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2015-2315.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2015-3421.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
@@ -4766,8 +4717,6 @@ CVE-2015-9413.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_m
 CVE-2016-0765.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2016-10919.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2016-10964.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2017-10837.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2017-18488.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2017-18563.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2017-20008.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2017-6103.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
@@ -4781,9 +4730,6 @@ CVE-2019-20203.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_
 CVE-2019-20204.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2019-9909.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2020-12696.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2020-36667.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2020-36668.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2020-36735.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2020-36761.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2020-5392.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2020-7948.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
@@ -4852,7 +4798,6 @@ CVE-2022-2891.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_m
 CVE-2022-29412.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2022-29444.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2022-3391.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2022-34148.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2022-35235.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2022-3618.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2022-36399.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
@@ -4863,10 +4808,7 @@ CVE-2022-40211.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_
 CVE-2022-40312.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2022-4119.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2022-41638.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2022-43450.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2022-43490.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2022-4368.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2022-4384.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2022-4391.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2022-4448.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2022-44595.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
@@ -4906,7 +4848,6 @@ CVE-2023-25972.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_
 CVE-2023-25993.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2023-26008.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2023-26533.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2023-2743.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2023-27442.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2023-27447.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2023-30483.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
@@ -4923,7 +4864,6 @@ CVE-2023-32742.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_
 CVE-2023-32964.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2023-33213.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2023-33325.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
-CVE-2023-34008.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2023-34368.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2023-34381.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
 CVE-2023-35096.yaml,medium,70,3-acceptable,strong_and_matchers|single_weak_word_matcher|readme_only_path
@@ -11221,7 +11161,6 @@ CVE-2011-3851.yaml,medium,90,4-good,strong_and_matchers|single_weak_word_matcher
 CVE-2011-3852.yaml,medium,90,4-good,strong_and_matchers|single_weak_word_matcher|active_probe_path
 CVE-2014-3903.yaml,medium,90,4-good,strong_and_matchers|single_weak_word_matcher|active_probe_path
 CVE-2015-9534.yaml,medium,90,4-good,strong_and_matchers|single_weak_word_matcher|active_probe_path
-CVE-2017-13138.yaml,medium,90,4-good,strong_and_matchers|single_weak_word_matcher|active_probe_path
 CVE-2017-18606.yaml,medium,90,4-good,strong_and_matchers|single_weak_word_matcher|active_probe_path
 CVE-2018-11244.yaml,medium,90,4-good,strong_and_matchers|single_weak_word_matcher|active_probe_path
 CVE-2020-14010.yaml,medium,90,4-good,strong_and_matchers|single_weak_word_matcher|active_probe_path
@@ -11454,15 +11393,9 @@ smb-v1-detection-10335.yaml,low,50,3-acceptable,no_http_block
 CL-TE-http-smuggling.yaml,low,55,3-acceptable,
 baseurl.yaml,low,55,3-acceptable,or_condition_matchers|active_probe_path
 gotmls-029073e443761e33b949f00044dc7b4d.yaml,low,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|readme_only_path
-X-Client-IP.yaml,low,60,3-acceptable,single_weak_word_matcher|active_probe_path
-X-Host.yaml,low,60,3-acceptable,single_weak_word_matcher|active_probe_path
-X-Remote-Addr.yaml,low,60,3-acceptable,single_weak_word_matcher|active_probe_path
-X-Remote-IP.yaml,low,60,3-acceptable,single_weak_word_matcher|active_probe_path
 Yes-324166d23ea84f015ea2606104d9e870.yaml,low,60,3-acceptable,cve_tagged_missing_cve_id|active_probe_path
 Yes-61d1e703ba4afd255ceec37d927d0427.yaml,low,60,3-acceptable,cve_tagged_missing_cve_id|active_probe_path
 cve-2018-14574-3308.yaml,low,60,3-acceptable,cve_tagged_missing_cve_id|active_probe_path
-x-forwarded-for.yaml,low,60,3-acceptable,single_weak_word_matcher|active_probe_path
-x-forwarded-header.yaml,low,60,3-acceptable,single_weak_word_matcher|active_probe_path
 CORS-arbitrary-subdomain-ACAC.yaml,low,65,3-acceptable,active_probe_path
 Slash-URL-Redirection.yaml,low,65,3-acceptable,active_probe_path
 apache-server-info.yaml,low,65,3-acceptable,active_probe_path
