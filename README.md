@@ -1,7 +1,7 @@
 # cent-nuclei-templates
 Cent Nuclei Templates generated through the [cent tool](https://github.com/xm1k3/cent)
 
-This repo contains **21,772 quality-filtered nuclei templates** sourced from the cent tool and curated against the [core nuclei-templates](https://github.com/projectdiscovery/nuclei-templates).
+This repo contains **10,997 quality-filtered nuclei templates** sourced from the cent tool and curated against the [core nuclei-templates](https://github.com/projectdiscovery/nuclei-templates).
 
 ### What was done to clean this up
 
@@ -16,30 +16,33 @@ The collection was built in two phases:
 **Phase 2: Community sync via cent (+9,630 templates)**
 - Pulled templates from 130+ community repos using the `cent` tool
 - Applied all quality filters from Phase 1 during import
-- Excluded topscoder (148k WordPress-only Wordfence CVE templates, too narrow in scope)
+- Excluded topscoder author (148k WordPress-only Wordfence CVE templates, too narrow in scope)
+- Excluded all templates tagged `wordpress` (nuclei is not the right tool for bulk WP scanning; these generate excessive noise)
 
 ### Template Stats
 
 | Severity | Count |
 |----------|------:|
-| Critical | 2,926 |
-| High     | 5,797 |
-| Medium   | 8,847 |
-| Low      |   821 |
-| Info     | 3,291 |
-| Unknown  |    52 |
-| **Total**| **21,772** |
+| Critical | 1,908 |
+| High     | 2,863 |
+| Medium   | 2,192 |
+| Low      |   708 |
+| Info     | 3,251 |
+| Unknown  |    75 |
+| **Total**| **10,997** |
 
-### Quality Tiers
+### What is excluded
 
-Templates are scored 0-100 based on matcher quality, severity specificity, and false-positive signals:
+The following categories are explicitly excluded from this collection and from future syncs:
 
-| Tier | Score | Count |
-|------|-------|------:|
-| 4-good | 71-100 | 13,652 |
-| 3-acceptable | 46-70 | 7,963 |
-| 2-review | 21-45 | 150 |
-| 1-cull | 0-20 | 2 |
+| Exclusion | Reason |
+|-----------|--------|
+| `author: topscoder` | ~148k WordPress-only Wordfence CVE templates; too narrow in scope |
+| `tags: wordpress` | WordPress plugin/theme templates generate excessive noise; nuclei is not the right tool for bulk WP scanning |
+| Empty-MD5 stubs | Auto-generated placeholder files with no real content |
+| Status-200-only matchers | No body/header check; high false-positive rate |
+| `compare_versions('>0')` | Always-true version check; matches everything |
+| Generic sole-word matchers | Single common word (`http`, `dns`, `backup`, etc.) as the only signal |
 
 ### Maintenance
 

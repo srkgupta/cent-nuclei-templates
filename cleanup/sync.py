@@ -38,9 +38,13 @@ CENT_BIN    = Path("/home/chitti/go/bin/cent")
 EMPTY_MD5   = "d41d8cd98f00b204e9800998ecf8427e"
 
 # Authors whose templates are excluded from sync (too narrow/noisy focus).
-# topscoder: ~148k WordPress-only Wordfence CVE templates, already well covered
-# by wp-specific scans and the core nuclei-templates set.
+# topscoder: ~148k WordPress-only Wordfence CVE templates, too narrow in scope.
 EXCLUDED_AUTHORS = {"topscoder"}
+
+# Tags that cause a template to be excluded from sync.
+# wordpress: too plugin/theme-specific; nuclei is not the right tool for
+# bulk WP scanning and these templates generate excessive noise.
+EXCLUDED_TAGS = {"wordpress"}
 
 # Identical to quality_score.py — keep in sync if scoring changes
 GENERIC_WORDS = {
@@ -60,6 +64,20 @@ def get_author(fpath: Path) -> str:
     except OSError:
         pass
     return ""
+
+
+def get_tags(fpath: Path) -> set[str]:
+    try:
+        with open(fpath, "r", errors="ignore") as f:
+            for i, line in enumerate(f):
+                if line.strip().startswith("tags:"):
+                    raw = line.split(":", 1)[1].strip()
+                    return {t.strip().lower() for t in raw.split(",") if t.strip()}
+                if i > 30:
+                    break
+    except OSError:
+        pass
+    return set()
 
 
 def get_id(fpath: Path) -> str | None:
@@ -222,6 +240,12 @@ def main() -> None:
                 stats["skip_excluded_author"] += 1
                 continue
 
+            # Tag exclusion (e.g. wordpress)
+            tags = get_tags(fpath)
+            if tags & EXCLUDED_TAGS:
+                stats["skip_excluded_tag"] += 1
+                continue
+
             tid = get_id(fpath)
             if not tid:
                 stats["skip_no_id"] += 1
@@ -288,12 +312,14 @@ def main() -> None:
                          if k.startswith('skip_') and k not in
                          ('skip_duplicate_id', 'skip_duplicate_content',
                           'skip_no_id', 'skip_empty_md5_stub',
-                          'skip_error', 'skip_excluded_author'))
+                          'skip_error', 'skip_excluded_author',
+                          'skip_excluded_tag'))
     print("=" * 55)
     print(f"  Staging templates scanned:  {stats['total']:>6,}")
     print(f"  Skipped (known ID):         {stats['skip_duplicate_id']:>6,}")
     print(f"  Skipped (empty-MD5 stubs):  {stats['skip_empty_md5_stub']:>6,}")
     print(f"  Skipped (excluded authors): {stats['skip_excluded_author']:>6,}")
+    print(f"  Skipped (excluded tags):    {stats['skip_excluded_tag']:>6,}")
     print(f"  Skipped (content dup):      {stats['skip_duplicate_content']:>6,}")
     print(f"  Skipped (no id field):      {stats['skip_no_id']:>6,}")
     print(f"  Skipped (quality filters):  {quality_skipped:>6,}")
