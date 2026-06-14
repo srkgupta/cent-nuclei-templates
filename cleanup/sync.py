@@ -191,52 +191,52 @@ def main() -> None:
 
     for fpath in sorted(staging_yamls):
         stats["total"] += 1
+        try:
+            # Empty-MD5 stub filter
+            if EMPTY_MD5 in fpath.name:
+                stats["skip_empty_md5_stub"] += 1
+                continue
 
-        # Empty-MD5 stub filter
-        if EMPTY_MD5 in fpath.name:
-            stats["skip_empty_md5_stub"] += 1
-            continue
+            tid = get_id(fpath)
+            if not tid:
+                stats["skip_no_id"] += 1
+                continue
 
-        tid = get_id(fpath)
-        if not tid:
-            stats["skip_no_id"] += 1
-            skipped.append((fpath.name, "no_id"))
-            continue
+            if tid in known_ids:
+                stats["skip_duplicate_id"] += 1
+                continue
 
-        if tid in known_ids:
-            stats["skip_duplicate_id"] += 1
-            continue
+            h = file_md5(fpath)
+            if h in our_hashes:
+                stats["skip_duplicate_content"] += 1
+                continue
 
-        h = file_md5(fpath)
-        if h in our_hashes:
-            stats["skip_duplicate_content"] += 1
-            continue
+            passes, reason = quality_check(fpath)
+            if not passes:
+                stats[f"skip_{reason}"] += 1
+                continue
 
-        passes, reason = quality_check(fpath)
-        if not passes:
-            stats[f"skip_{reason}"] += 1
-            skipped.append((fpath.name, reason))
-            continue
+            # Fix deprecated syntax inline before copying
+            content = fpath.read_text(errors="ignore")
+            content = re.sub(r'^requests:', 'http:', content, flags=re.MULTILINE)
 
-        # Fix deprecated syntax inline before copying
-        content = fpath.read_text(errors="ignore")
-        content = re.sub(r'^requests:', 'http:', content, flags=re.MULTILINE)
+            dest = TEMPLATES / fpath.name
+            if dest.exists():
+                dest = TEMPLATES / f"{fpath.stem}_new{fpath.suffix}"
 
-        dest = TEMPLATES / fpath.name
-        # Avoid filename collision — append a suffix if needed
-        if dest.exists():
-            dest = TEMPLATES / f"{fpath.stem}_new{fpath.suffix}"
+            if not args.dry_run:
+                dest.write_text(content)
 
-        if not args.dry_run:
-            dest.write_text(content)
+            # Always track seen IDs and hashes so staging duplicates
+            # don't inflate the count in dry-run mode either
+            our_hashes.add(h)
+            known_ids.add(tid)
 
-        # Always track seen IDs and hashes so staging duplicates
-        # don't inflate the count in dry-run mode either
-        our_hashes.add(h)
-        known_ids.add(tid)
+            added.append(fpath.name)
+            stats["added"] += 1
 
-        added.append(fpath.name)
-        stats["added"] += 1
+        except Exception:
+            stats["skip_error"] += 1
 
     # Step 5: Regenerate quality report
     if not args.dry_run and stats["added"] > 0:
@@ -251,7 +251,7 @@ def main() -> None:
     quality_skipped = sum(v for k, v in stats.items()
                          if k.startswith('skip_') and k not in
                          ('skip_duplicate_id', 'skip_duplicate_content',
-                          'skip_no_id', 'skip_empty_md5_stub'))
+                          'skip_no_id', 'skip_empty_md5_stub', 'skip_error'))
     print("=" * 55)
     print(f"  Staging templates scanned:  {stats['total']:>6,}")
     print(f"  Skipped (known ID):         {stats['skip_duplicate_id']:>6,}")
@@ -259,6 +259,7 @@ def main() -> None:
     print(f"  Skipped (content dup):      {stats['skip_duplicate_content']:>6,}")
     print(f"  Skipped (no id field):      {stats['skip_no_id']:>6,}")
     print(f"  Skipped (quality filters):  {quality_skipped:>6,}")
+    print(f"  Skipped (errors/malformed): {stats['skip_error']:>6,}")
     print(f"  {'[DRY RUN] Would add' if args.dry_run else 'Added to collection'}:{stats['added']:>6,}")
     print("=" * 55)
 
