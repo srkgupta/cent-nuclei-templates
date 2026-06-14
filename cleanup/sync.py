@@ -37,11 +37,29 @@ CORE_DIR    = Path("/home/chitti/nuclei-templates")
 CENT_BIN    = Path("/home/chitti/go/bin/cent")
 EMPTY_MD5   = "d41d8cd98f00b204e9800998ecf8427e"
 
+# Authors whose templates are excluded from sync (too narrow/noisy focus).
+# topscoder: ~148k WordPress-only Wordfence CVE templates, already well covered
+# by wp-specific scans and the core nuclei-templates set.
+EXCLUDED_AUTHORS = {"topscoder"}
+
 # Identical to quality_score.py — keep in sync if scoring changes
 GENERIC_WORDS = {
     "http", "dns", "backup", "player", "stream", "evil",
     "team", "canvas", "erp", "bridge",
 }
+
+
+def get_author(fpath: Path) -> str:
+    try:
+        with open(fpath, "r", errors="ignore") as f:
+            for line in f:
+                if line.strip().startswith("author:"):
+                    return line.split(":", 1)[1].strip()
+                if f.tell() > 1024:
+                    break
+    except OSError:
+        pass
+    return ""
 
 
 def get_id(fpath: Path) -> str | None:
@@ -186,6 +204,7 @@ def main() -> None:
 
     # Step 3 & 4: Filter and copy
     stats = Counter()
+    tag_counts: Counter = Counter()
     added: list[str] = []
     skipped: list[tuple[str, str]] = []
 
@@ -195,6 +214,12 @@ def main() -> None:
             # Empty-MD5 stub filter
             if EMPTY_MD5 in fpath.name:
                 stats["skip_empty_md5_stub"] += 1
+                continue
+
+            # Author exclusion
+            author = get_author(fpath)
+            if any(ex in author for ex in EXCLUDED_AUTHORS):
+                stats["skip_excluded_author"] += 1
                 continue
 
             tid = get_id(fpath)
@@ -232,6 +257,17 @@ def main() -> None:
             our_hashes.add(h)
             known_ids.add(tid)
 
+            # Count tags for the summary breakdown
+            try:
+                data = yaml.safe_load(fpath.read_text(errors="ignore"))
+                tags_str = str((data.get("info") or {}).get("tags") or "")
+                for tag in tags_str.split(","):
+                    tag = tag.strip()
+                    if tag:
+                        tag_counts[tag] += 1
+            except Exception:
+                pass
+
             added.append(fpath.name)
             stats["added"] += 1
 
@@ -251,11 +287,13 @@ def main() -> None:
     quality_skipped = sum(v for k, v in stats.items()
                          if k.startswith('skip_') and k not in
                          ('skip_duplicate_id', 'skip_duplicate_content',
-                          'skip_no_id', 'skip_empty_md5_stub', 'skip_error'))
+                          'skip_no_id', 'skip_empty_md5_stub',
+                          'skip_error', 'skip_excluded_author'))
     print("=" * 55)
     print(f"  Staging templates scanned:  {stats['total']:>6,}")
     print(f"  Skipped (known ID):         {stats['skip_duplicate_id']:>6,}")
     print(f"  Skipped (empty-MD5 stubs):  {stats['skip_empty_md5_stub']:>6,}")
+    print(f"  Skipped (excluded authors): {stats['skip_excluded_author']:>6,}")
     print(f"  Skipped (content dup):      {stats['skip_duplicate_content']:>6,}")
     print(f"  Skipped (no id field):      {stats['skip_no_id']:>6,}")
     print(f"  Skipped (quality filters):  {quality_skipped:>6,}")
@@ -263,18 +301,19 @@ def main() -> None:
     print(f"  {'[DRY RUN] Would add' if args.dry_run else 'Added to collection'}:{stats['added']:>6,}")
     print("=" * 55)
 
-    if added:
-        print(f"\nNew templates {'(dry run)' if args.dry_run else 'added'}:")
-        for name in added[:20]:
-            print(f"  {name}")
-        if len(added) > 20:
-            print(f"  ... and {len(added)-20} more")
+    if tag_counts:
+        print(f"\nTag distribution of {'would-be additions' if args.dry_run else 'added templates'} (top 20):")
+        print(f"  {'Tag':<25} {'Count':>6}")
+        print(f"  {'-'*25} {'-'*6}")
+        for tag, count in tag_counts.most_common(20):
+            print(f"  {tag:<25} {count:>6,}")
 
-    if skipped and not args.dry_run:
-        print(f"\nTop quality filter rejections:")
-        reject_counts = Counter(r for _, r in skipped)
-        for reason, count in reject_counts.most_common(10):
-            print(f"  {reason}: {count}")
+    if added and args.dry_run:
+        print(f"\nSample new templates:")
+        for name in added[:10]:
+            print(f"  {name}")
+        if len(added) > 10:
+            print(f"  ... and {len(added)-10} more")
 
 
 if __name__ == "__main__":
