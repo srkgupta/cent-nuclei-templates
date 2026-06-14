@@ -88,6 +88,9 @@ def quality_check(fpath: Path) -> tuple[bool, str]:
         if not matchers:
             return False, "no_matchers"
 
+        matchers = [m for m in matchers if isinstance(m, dict)]
+        if not matchers:
+            return False, "no_matchers"
         types = {m.get("type", "") for m in matchers}
 
         # Status-only
