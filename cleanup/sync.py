@@ -35,6 +35,7 @@ REPO_ROOT   = Path(__file__).parent.parent.resolve()
 TEMPLATES   = REPO_ROOT / "templates"
 CORE_DIR    = Path("/home/chitti/nuclei-templates")
 CENT_BIN    = Path("/home/chitti/go/bin/cent")
+EMPTY_MD5   = "d41d8cd98f00b204e9800998ecf8427e"
 
 # Identical to quality_score.py — keep in sync if scoring changes
 GENERIC_WORDS = {
@@ -191,6 +192,11 @@ def main() -> None:
     for fpath in sorted(staging_yamls):
         stats["total"] += 1
 
+        # Empty-MD5 stub filter
+        if EMPTY_MD5 in fpath.name:
+            stats["skip_empty_md5_stub"] += 1
+            continue
+
         tid = get_id(fpath)
         if not tid:
             stats["skip_no_id"] += 1
@@ -223,8 +229,11 @@ def main() -> None:
 
         if not args.dry_run:
             dest.write_text(content)
-            our_hashes.add(h)
-            known_ids.add(tid)
+
+        # Always track seen IDs and hashes so staging duplicates
+        # don't inflate the count in dry-run mode either
+        our_hashes.add(h)
+        known_ids.add(tid)
 
         added.append(fpath.name)
         stats["added"] += 1
@@ -239,12 +248,17 @@ def main() -> None:
 
     # Summary
     print()
+    quality_skipped = sum(v for k, v in stats.items()
+                         if k.startswith('skip_') and k not in
+                         ('skip_duplicate_id', 'skip_duplicate_content',
+                          'skip_no_id', 'skip_empty_md5_stub'))
     print("=" * 55)
     print(f"  Staging templates scanned:  {stats['total']:>6,}")
     print(f"  Skipped (known ID):         {stats['skip_duplicate_id']:>6,}")
+    print(f"  Skipped (empty-MD5 stubs):  {stats['skip_empty_md5_stub']:>6,}")
     print(f"  Skipped (content dup):      {stats['skip_duplicate_content']:>6,}")
-    print(f"  Skipped (quality filters):  {sum(v for k,v in stats.items() if k.startswith('skip_') and 'dup' not in k and k != 'skip_no_id'):>6,}")
     print(f"  Skipped (no id field):      {stats['skip_no_id']:>6,}")
+    print(f"  Skipped (quality filters):  {quality_skipped:>6,}")
     print(f"  {'[DRY RUN] Would add' if args.dry_run else 'Added to collection'}:{stats['added']:>6,}")
     print("=" * 55)
 
