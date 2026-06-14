@@ -5,13 +5,18 @@ This repo contains **21,772 quality-filtered nuclei templates** sourced from the
 
 ### What was done to clean this up
 
-Starting from ~23,000 raw templates, the following passes were applied:
+The collection was built in two phases:
 
+**Phase 1: Clean up the original ~23,000 custom templates (culled to ~12,000)**
 - **Deduplication** - templates whose `id:` field matched core nuclei-templates removed; empty-MD5 stub templates (auto-generated placeholders) removed
 - **No-signal culls** - templates with no matchers block, status-200-only matchers, and `compare_versions('>0')` always-true version checks removed
 - **Syntax modernisation** - 1,400 templates updated from deprecated nuclei v2 `requests:` key to `http:`
 - **Generic matcher culls** - templates whose sole word matcher was a common English word (`http`, `dns`, `backup`, `player`, `stream`, `evil`, `team`, `canvas`, `erp`, `bridge`) removed
-- **Community sync** - 9,630 net-new templates added from 130+ community repos via `cent`, with all quality filters applied during import; topscoder (WordPress-only Wordfence CVE templates) excluded
+
+**Phase 2: Community sync via cent (+9,630 templates)**
+- Pulled templates from 130+ community repos using the `cent` tool
+- Applied all quality filters from Phase 1 during import
+- Excluded topscoder (148k WordPress-only Wordfence CVE templates, too narrow in scope)
 
 ### Template Stats
 
