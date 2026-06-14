@@ -8,7 +8,7 @@ info:
     - https://mp.weixin.qq.com/s/iRmDQJH23FJ6mL_GzXeL6g
   tags: ruijie,leakage
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/cgi-bin/main.cgi?oper=showsvr&encode=utf-8&username=admin&sid=1614345312&oper=showres"

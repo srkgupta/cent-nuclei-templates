@@ -8,7 +8,7 @@ info:
     - https://github.com/coldrainh
   tags: Weaver,oa,loginbypass
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/login/VerifyGDLogin.jsp?para1=1&para2=2'

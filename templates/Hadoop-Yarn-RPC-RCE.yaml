@@ -8,7 +8,7 @@ info:
     - https://github.com/Al1ex/Hadoop-Yarn-ResourceManager-RCE/blob/main/Hadoop_Yarn_RPC_RCE.py
   tags: Hadoop,rce
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/ws/v1/cluster/apps/new-application"

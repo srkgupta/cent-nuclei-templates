@@ -6,7 +6,7 @@ info:
   severity: high
   tags: ruoyi,unauth
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/prod-api/druid/websession.html"

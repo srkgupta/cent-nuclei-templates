@@ -7,7 +7,7 @@ info:
   description: 用友未授权访问及sql注入
   tags: yongyou
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/service/~iufo/com.ufida.web.action.ActionServlet?action=nc.ui.iufo.release.InfoReleaseAction&method=createBBSRelease&TreeSelectedID=&TableSelectedID="

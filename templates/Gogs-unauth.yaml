@@ -6,7 +6,7 @@ info:
   severity: medium
   tags: Gogs,unauth
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/explore/repos"

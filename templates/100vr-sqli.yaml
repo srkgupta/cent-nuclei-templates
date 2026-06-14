@@ -6,7 +6,7 @@ info:
   severity: high
   tags: 100vr,sqli
 
-requests:
+http:
   - raw:
       - |
         POST /100vr/login/checktypelogin/ HTTP/1.1

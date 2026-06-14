@@ -7,7 +7,7 @@ info:
   reference: https://www.zeroscience.mk/codes/qhsignage_rce.txt
   tags: Digital,rce
 
-requests:
+http:
   - raw:
       - |
         POST /QH.aspx HTTP/1.1

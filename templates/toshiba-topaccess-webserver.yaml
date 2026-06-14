@@ -6,7 +6,7 @@ info:
   severity: info
   tags: toshiba,web,panel
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/?MAIN=TOPACCESS"

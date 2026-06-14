@@ -9,7 +9,7 @@ info:
     - https://wpscan.com/vulnerability/7142a538-7c3d-4dd0-bd2c-cbd2efaf53c5
   tags: xss,wordpress,wp-plugin,wp
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/?wahi=JzthbGVydChkb2N1bWVudC5kb21haW4pOy8v'

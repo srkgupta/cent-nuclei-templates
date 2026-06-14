@@ -6,7 +6,7 @@ info:
   severity: medium
   tags: config,exposure,aws,devops
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/Dockerrun.aws.json'

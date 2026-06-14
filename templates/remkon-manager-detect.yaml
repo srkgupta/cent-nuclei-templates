@@ -6,7 +6,7 @@ info:
   severity: info
   tags: remkon,tech,panel
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/login.php'

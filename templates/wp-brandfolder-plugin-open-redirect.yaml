@@ -7,7 +7,7 @@ info:
   severity: low
   tags: wp,redirect
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/plugins/brandfolder/callback.php?wp_abspath=https://example.com/"

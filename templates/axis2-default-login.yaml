@@ -6,7 +6,7 @@ info:
   severity: high
   tags: axis,apache,default-login,axis2
 
-requests:
+http:
   - raw:
       - |
         POST /axis2-admin/login HTTP/1.1

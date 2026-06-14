@@ -5,7 +5,7 @@ info:
   author: nadino
   severity: info
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/crx/de/index.jsp"

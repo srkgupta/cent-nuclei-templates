@@ -8,7 +8,7 @@ info:
     shodan-query: http.component:"WordPress"
   tags: tech,wordpress
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

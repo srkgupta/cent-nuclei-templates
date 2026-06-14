@@ -5,7 +5,7 @@ info:
   author: Kabilan S
   severity: low
 
-requests:
+http:
   - method: GET
     # Example of sending some headers to the servers
     headers:

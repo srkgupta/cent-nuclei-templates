@@ -4,7 +4,7 @@ info:
   author: str1am
   severity: high
   tags: pma
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/index.php?a=display&templateFile=README.md"

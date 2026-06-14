@@ -22,7 +22,7 @@ info:
     shodan-query: http.html:"Cisco rv340"
   tags: cve,cve2021,cisco,rce,auth-bypass,injection
 
-requests:
+http:
   - raw:
       - |
         POST /upload HTTP/1.1

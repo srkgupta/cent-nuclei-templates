@@ -12,7 +12,7 @@ info:
     google-dork: inurl:"/wp-includes/sym404/"
   tags: wordpress,listing
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-includes/sym404/root/etc/passwd"

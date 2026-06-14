@@ -11,7 +11,7 @@ info:
     - https://github.com/Udyz/WP-Statistics-BlindSQL
   tags: wordpress,wp-plugin,unauth,sqli,blind
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/wp-content/plugins/wp-statistics/readme.txt'

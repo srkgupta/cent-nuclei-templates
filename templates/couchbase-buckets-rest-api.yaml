@@ -8,7 +8,7 @@ info:
     - https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-metricset-couchbase-bucket.html
   severity: info
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/pools/default/buckets"

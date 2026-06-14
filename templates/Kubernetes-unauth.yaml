@@ -7,7 +7,7 @@ info:
   reference: https://blog.binaryedge.io/2018/12/06/kubernetes-being-hijacked-worldwide/
   tags: Kubernetes,rce
 
-requests:
+http:
   - raw:
       - |
         POST /api/v1/pods HTTP/1.1

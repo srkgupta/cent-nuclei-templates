@@ -7,7 +7,7 @@ info:
   reference: http://www.cnvd.org.cn/flaw/show/CNVD-2018-09319
   tags: Anni,fileDownload
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/download.rsp"

@@ -6,7 +6,7 @@ info:
   severity: critical
   tags: oa,rce
 
-requests:
+http:
   - raw:
       - |
         POST /ioffice/prg/set/wss/ioAssistance.asmx HTTP/1.1

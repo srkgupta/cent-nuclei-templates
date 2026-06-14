@@ -6,7 +6,7 @@ info:
   severity: high
   tags: AIC,leakage
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/datacenter/dataOrigin.ashx?c=login"

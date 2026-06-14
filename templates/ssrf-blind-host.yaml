@@ -6,7 +6,7 @@ info:
   severity: medium
   tags: ssrf,dast,oast
 
-requests:
+http:
   - raw:
       - | 
         GET {{BaseURL}} HTTP/1.1

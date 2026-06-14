@@ -7,7 +7,7 @@ info:
   severity: high
   tags: comtrend,router,vivacom,iot,disclosure
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/password.cgi"

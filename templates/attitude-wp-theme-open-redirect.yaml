@@ -7,7 +7,7 @@ info:
   severity: low
   tags: wp,redirect
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/themes/Attitude/go.php?https://example.com/"

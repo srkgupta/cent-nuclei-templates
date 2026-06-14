@@ -7,7 +7,7 @@ info:
   reference: https://github.com/imjdl/Apache-NiFi-Api-RCE/blob/master/exp.py
   tags: NiFi,rce
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/nifi-api/access/config"

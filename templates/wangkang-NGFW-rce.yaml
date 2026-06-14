@@ -6,7 +6,7 @@ info:
   severity: critical
   tags: NGFW,rce
 
-requests:
+http:
   - raw:
       - |
         POST /directdata/direct/router HTTP/1.1

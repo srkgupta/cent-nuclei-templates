@@ -6,7 +6,7 @@ info:
   severity: critical
   description: FrontPage Server Config Exposure
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/_vti_pvt/service.pwd"

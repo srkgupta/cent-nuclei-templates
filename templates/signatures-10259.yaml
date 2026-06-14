@@ -3,7 +3,7 @@ info:
   name: bolt_version_fingerprint
   severity: info
   author: glatisant & erwan
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/bolt-public/view/js/bolt.js"

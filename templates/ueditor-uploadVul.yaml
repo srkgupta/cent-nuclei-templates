@@ -6,7 +6,7 @@ info:
   severity: critical
   tags: ueditor,rce
 
-requests:
+http:
   - raw:
       - |
         POST /ueditor/net/controller.ashx?action=catchimage&encode=utf-8 HTTP/1.1

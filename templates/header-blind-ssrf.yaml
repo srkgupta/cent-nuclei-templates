@@ -6,7 +6,7 @@ info:
   severity: high
   description: Checks for Blind SSR via popular browser headers.
 
-requests:
+http:
   - payloads:
       header: helpers/payloads/request-headers.txt
 

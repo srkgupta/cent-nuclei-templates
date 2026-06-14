@@ -6,7 +6,7 @@ info:
   severity: low
   tags: misc
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

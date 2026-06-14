@@ -6,7 +6,7 @@ info:
   severity: high
   tags: ueditor,upload
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/ueditor/net/controller.ashx?action=catchimage&encode=utf-8"

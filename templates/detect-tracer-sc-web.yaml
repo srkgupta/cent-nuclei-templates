@@ -7,7 +7,7 @@ info:
   severity: info
   tags: tracer,trane,iot
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/hui/index.html"

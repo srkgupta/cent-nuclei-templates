@@ -5,7 +5,7 @@ info:
   author: ehsahil
   severity: info
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/login"

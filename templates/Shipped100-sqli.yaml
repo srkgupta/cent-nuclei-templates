@@ -8,7 +8,7 @@ info:
     - https://github.com/meljith-lab/mcon1/blob/821445cc974234cc6ce7367bc7fbcc4d6eb8aea5/yournuclei/shipped100-210609-054716.yaml
   tags: Shipped100,sqli
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/?M_id=1%27&type=product"

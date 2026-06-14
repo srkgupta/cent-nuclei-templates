@@ -8,7 +8,7 @@ info:
   # References:
   # - [1] https://www.exploit-db.com/exploits/48910
   # - [2] https://www.redtimmy.com/critical-information-disclosure-on-wp-courses-plugin-exposes-private-course-videos-and-materials/
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-json/wp/v2/lesson/1"

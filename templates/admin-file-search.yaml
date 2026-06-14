@@ -7,7 +7,7 @@ info:
   tags:  disclosure,sensitive,data
 
   
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/crx/de/filesearch.jsp;%0A.css?name=admin"

@@ -9,7 +9,7 @@ info:
   severity: high
   tags: rce
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}{{payload}}"

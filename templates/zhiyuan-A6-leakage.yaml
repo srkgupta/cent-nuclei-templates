@@ -6,7 +6,7 @@ info:
   severity: high
   tags: zhiyuan
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/yyoa/createMysql.jsp"

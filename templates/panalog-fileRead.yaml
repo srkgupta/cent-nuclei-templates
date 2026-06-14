@@ -6,7 +6,7 @@ info:
   severity: medium
   tags: panalog,fileRead
 
-requests:
+http:
   - raw:
       - |
         POST /error.php HTTP/1.1

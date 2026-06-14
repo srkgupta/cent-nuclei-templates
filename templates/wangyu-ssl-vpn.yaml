@@ -6,7 +6,7 @@ info:
   severity: critical
   tags: VPN,upload
 
-requests:
+http:
   - raw:
       - |
         POST /SSL/admin/so/FileManager.jsp;Login HTTP/1.1

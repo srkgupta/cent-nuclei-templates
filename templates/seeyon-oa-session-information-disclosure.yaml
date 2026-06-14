@@ -8,7 +8,7 @@ info:
     - https://blog.csdn.net/xd_2021/article/details/122232463
   tags: seeyon,information,disclosure
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/yyoa/ext/https/getSessionList.jsp?cmd=getAll"

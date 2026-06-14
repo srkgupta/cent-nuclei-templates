@@ -8,7 +8,7 @@ info:
   reference: https://wpscan.com/vulnerability/6147acf5-e43f-47e6-ab56-c9c8be584818
   tags: wordpress,redirect,wp-plugin,ninjaform,authenticated
 
-requests:
+http:
   - raw:
       - |
         POST /wp-login.php HTTP/1.1

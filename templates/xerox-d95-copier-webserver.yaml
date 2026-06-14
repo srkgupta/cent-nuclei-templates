@@ -6,7 +6,7 @@ info:
   severity: info
   tags: xerox,web,panel
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/stat.htm"

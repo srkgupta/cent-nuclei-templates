@@ -6,7 +6,7 @@ info:
   severity: high
   tags: fanwei,bypass
 
-requests:
+http:
   - raw:
       - |
         POST /;/emp/admin/baseuser/list HTTP/1.1

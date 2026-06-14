@@ -3,7 +3,7 @@ info:
   name: dnn_cms_version_fingerprint
   severity: info
   author: glatisant & erwan
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/App_Code/AssemblyInfo.vb"

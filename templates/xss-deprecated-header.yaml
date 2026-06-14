@@ -10,7 +10,7 @@ info:
     - https://owasp.org/www-project-secure-headers/#x-xss-protection
   tags: xss,misconfig,generic
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

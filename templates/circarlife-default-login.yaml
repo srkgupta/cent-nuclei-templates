@@ -7,7 +7,7 @@ info:
   severity: critical
   tags: circarlife,scada,iot,auth
 
-requests:
+http:
   - method: POST
     path:
       - "{{BaseURL}}/html/setup.html"

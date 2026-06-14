@@ -6,7 +6,7 @@ info:
   severity: high
   tags: wangkang,rce
 
-requests:
+http:
   - raw:
       - |
         POST /protocol/iscdevicestatus/getsysdatetime.php HTTP/1.1

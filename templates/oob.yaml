@@ -6,7 +6,7 @@ info:
   severity: high
 
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

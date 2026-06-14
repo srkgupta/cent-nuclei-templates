@@ -6,7 +6,7 @@ info:
   severity: critical
   tags: zhiyuan
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/seeyon/htmlofficeservlet"

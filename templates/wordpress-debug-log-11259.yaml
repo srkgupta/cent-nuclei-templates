@@ -4,7 +4,7 @@ info:
   author: geraldino2 & @dwisiswant0
   severity: low
   tags: wordpress,log
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/debug.log"

@@ -7,7 +7,7 @@ info:
   reference: https://www.exploit-db.com/ghdb/6819
   tags: panel
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/cgi-bin/webcm?getpage=../html/login.html'

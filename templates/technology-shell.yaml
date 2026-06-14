@@ -6,7 +6,7 @@ info:
   severity: high
   tags: technology,shell
 
-requests:
+http:
   - raw:
       - |
         POST /cgi-bin/cstecgi.cgi HTTP/1.1

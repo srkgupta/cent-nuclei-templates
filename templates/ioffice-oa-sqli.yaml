@@ -6,7 +6,7 @@ info:
   severity: critical
   tags: oa,sqli
 
-requests:
+http:
   - raw:
       - |
         POST /ioffice/prg/set/wss/ioCtlSet.asmx HTTP/1.1

@@ -8,7 +8,7 @@ info:
     - https://www.freebuf.com/vuls/284537.html
   tags: 74cms,xss
 
-requests:
+http:
   - raw:
       - |
         POST /index.php?m=&c=help&a=help_list HTTP/1.1

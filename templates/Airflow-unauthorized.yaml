@@ -7,7 +7,7 @@ info:
   reference: http://www.str1am.top
   tags: Airflow,unauthorized
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/admin/"

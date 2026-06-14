@@ -10,7 +10,7 @@ info:
     - http://www.fortiguard.com/advisory/fortios-open-redirect-vulnerability
   tags: redirect,fortinet,fortios
 
-requests:
+http:
   - method: GET
 
     path:

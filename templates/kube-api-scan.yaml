@@ -4,7 +4,7 @@ info:
   author: sharath
   severity: info
   description: Scans all open urls of kube api server
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/version"

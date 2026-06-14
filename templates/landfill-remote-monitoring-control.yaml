@@ -8,7 +8,7 @@ info:
   severity: info
   tags: panel,scs,rmc,iot
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

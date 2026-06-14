@@ -12,7 +12,7 @@ info:
   description: Obtain InfluxDB Version Information
   tags: tech,influxdb,api
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/ping"

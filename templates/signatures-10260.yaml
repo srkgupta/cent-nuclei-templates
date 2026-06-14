@@ -3,7 +3,7 @@ info:
   name: concrete5_version_fingerprint
   severity: info
   author: glatisant & erwan
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/application/languages/el_GR/LC_MESSAGES/messages.mo"

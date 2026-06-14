@@ -5,7 +5,7 @@ info:
   author: yashgoti
   severity: info
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/uploads/"

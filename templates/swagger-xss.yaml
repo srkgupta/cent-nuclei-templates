@@ -7,7 +7,7 @@ info:
   reference: https://twitter.com/A0x017/status/1371122293921964032
   tags: swagger,xss
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/dochelper?userId=<script>alert({{randstr}})</script>"

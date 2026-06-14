@@ -6,7 +6,7 @@ info:
   severity: high
   tags: E-message,unauth
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/setup/setup-datasource-standard.jsp"

@@ -7,7 +7,7 @@ info:
   reference: https://wpscan.com/vulnerability/9267
   tags: wordpress
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/?rsd=%27%3E%3Csvg%2Fonload%3Dconfirm(%2F{{randstr}}%2F)%3E'

@@ -6,7 +6,7 @@ info:
   severity: high
   tags: Apereo,Cas,rce
 
-requests:
+http:
   - raw:
       - |
         POST /cas/login HTTP/1.1

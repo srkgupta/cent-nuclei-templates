@@ -8,7 +8,7 @@ info:
   reference: https://wpscan.com/vulnerability/fd4352ad-dae0-4404-94d1-11083cb1f44d
   tags: wordpress,redirect,wp-plugin,elementor,wp
 
-requests:
+http:
   - raw:
       - |
         GET /?author=1 HTTP/1.1

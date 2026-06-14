@@ -6,7 +6,7 @@ info:
   severity: high
   tags: seaCMS,sqli
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/js/player/dmplayer/dmku/index.php?ac=so&key=1"

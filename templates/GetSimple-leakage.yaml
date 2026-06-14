@@ -6,7 +6,7 @@ info:
   severity: medium
   tags: GetSimple,leakage
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/data/users/admin.xml"

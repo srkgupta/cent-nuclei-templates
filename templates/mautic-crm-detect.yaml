@@ -9,7 +9,7 @@ info:
   reference:
     - https://github.com/mautic/mautic
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/s/login"

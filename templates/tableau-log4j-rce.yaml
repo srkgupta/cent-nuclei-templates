@@ -8,7 +8,7 @@ info:
   severity: critical
   tags: log4j,oast
 
-requests:
+http:
   - raw:
       - |
         POST /vizportal/api/web/v1/getSessionInfo HTTP/1.1

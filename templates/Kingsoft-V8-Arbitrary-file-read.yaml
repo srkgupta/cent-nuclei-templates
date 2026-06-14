@@ -9,7 +9,7 @@ info:
       - https://cn-sec.com/archives/342280.html
     severity: high
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/htmltopdf/downfile.php?filename=downfile.php"

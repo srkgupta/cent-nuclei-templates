@@ -6,7 +6,7 @@ info:
   severity: high
   tags: JeeSite,login
 
-requests:
+http:
   - raw:
       - |
         POST /a/login HTTP/1.1

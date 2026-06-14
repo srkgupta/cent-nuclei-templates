@@ -6,7 +6,7 @@ info:
   severity: high
   tags: MinIO,login
 
-requests:
+http:
   - raw:
       - |
         POST /minio/webrpc HTTP/1.1

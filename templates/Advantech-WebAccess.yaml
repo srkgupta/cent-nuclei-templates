@@ -8,7 +8,7 @@ info:
   reference: http://www.str1am.top
   tags: Advantech,sqli
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/BWMobileService/BWScadaRest.svc/"

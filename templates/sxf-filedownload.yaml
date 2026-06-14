@@ -6,7 +6,7 @@ info:
   severity: high
   tags: solr
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/QH.aspx?responderId=ResourceNewResponder&action=download&fileName=.%2fGlobal.asax"

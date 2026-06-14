@@ -6,7 +6,7 @@ info:
   severity: low
   tags: zerof,xss
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/admin.back<img src=a onerror=alert('{{randstr}}')>"

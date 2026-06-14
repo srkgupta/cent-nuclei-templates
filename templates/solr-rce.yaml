@@ -6,7 +6,7 @@ info:
   severity: high
   tags: solr
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/solr/supplierSearch_V2/dataimport"

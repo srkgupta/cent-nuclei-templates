@@ -4,7 +4,7 @@ info:
   author: Str1am
   severity: high
   tags: solr,fileRead
-requests:
+http:
   - raw:
       - |
         POST /solr/supplierSearch_V2/debug/dump?param=ContentStreams HTTP/1.1

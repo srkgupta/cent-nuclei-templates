@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
   tags: wp-plugin,redirect,wordpress,wp,unauth
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/?wp_nlm=confirmation&appurl=aHR0cDovL2ludGVyYWN0LnNo"

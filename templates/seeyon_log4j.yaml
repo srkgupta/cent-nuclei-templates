@@ -6,7 +6,7 @@ info:
   severity: critical
   tags: seeyon,log4j
 
-requests:
+http:
   - raw:
       - |
         GET /seeyon/index.jsp HTTP/1.1

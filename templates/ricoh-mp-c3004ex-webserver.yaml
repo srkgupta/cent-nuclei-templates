@@ -6,7 +6,7 @@ info:
   severity: info
   tags: ricoh,web,panel
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/web/guest/en/websys/webArch/mainFrame.cgi"

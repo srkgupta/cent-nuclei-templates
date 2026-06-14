@@ -7,7 +7,7 @@ info:
   tags: lfi
   reference: https://cxsecurity.com/issue/WLB-2020010234
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/index.php?page_slug=../../../../../etc/passwd%00'

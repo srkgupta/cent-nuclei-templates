@@ -6,7 +6,7 @@ info:
   severity: info
   tags: hp,web,panel
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/hp/device/"

@@ -7,7 +7,7 @@ info:
   reference: https://www.tuicool.com/articles/n2iuq2v
   tags: solr,unauth
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/solr/"

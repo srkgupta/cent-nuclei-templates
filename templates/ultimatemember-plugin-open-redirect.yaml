@@ -7,7 +7,7 @@ info:
   severity: medium
   tags: wp,redirect,wordpress
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/register/?redirect_to=https://example.com/"
