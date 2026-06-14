@@ -100,12 +100,12 @@ def quality_check(fpath: Path) -> tuple[bool, str]:
         # Always-true version check
         for dm in (m for m in matchers if m.get("type") == "dsl"):
             for expr in (dm.get("dsl") or []):
-                if "'>0'" in expr or '">0"' in expr:
+                if isinstance(expr, str) and ("'>0'" in expr or '">0"' in expr):
                     return False, "always_true_version_check"
 
         # Generic sole-word matcher
         for wm in (m for m in matchers if m.get("type") == "word"):
-            words = wm.get("words") or []
+            words = [str(w) for w in (wm.get("words") or [])]
             if len(words) == 1 and words[0].lower() in GENERIC_WORDS:
                 return False, f"generic_word:{words[0].lower()}"
 
