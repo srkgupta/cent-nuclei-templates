@@ -1,7 +1,7 @@
 # cent-nuclei-templates
 Cent Nuclei Templates generated through the [cent tool](https://github.com/xm1k3/cent)
 
-This repo contains **10,997 quality-filtered nuclei templates** sourced from the cent tool and curated against the [core nuclei-templates](https://github.com/projectdiscovery/nuclei-templates).
+This repo contains **9,331 quality-filtered nuclei templates** sourced from the cent tool and curated against the [core nuclei-templates](https://github.com/projectdiscovery/nuclei-templates).
 
 ### What was done to clean this up
 
@@ -18,18 +18,19 @@ The collection was built in two phases:
 - Applied all quality filters from Phase 1 during import
 - Excluded topscoder author (148k WordPress-only Wordfence CVE templates, too narrow in scope)
 - Excluded all templates tagged `wordpress` (nuclei is not the right tool for bulk WP scanning; these generate excessive noise)
+- Removed 1,666 Chinese-language templates (70 with CJK filenames, 1,596 with CJK content); these target region-specific Chinese enterprise software and are unmaintainable without language context
 
 ### Template Stats
 
 | Severity | Count |
 |----------|------:|
-| Critical | 1,908 |
-| High     | 2,863 |
-| Medium   | 2,192 |
-| Low      |   708 |
-| Info     | 3,251 |
-| Unknown  |    75 |
-| **Total**| **10,997** |
+| Critical | 1,503 |
+| High     | 2,044 |
+| Medium   | 1,996 |
+| Low      |   685 |
+| Info     | 3,032 |
+| Unknown  |    62 |
+| **Total**| **9,331** |
 
 ### What is excluded
 
@@ -39,6 +40,7 @@ The following categories are explicitly excluded from this collection and from f
 |-----------|--------|
 | `author: topscoder` | ~148k WordPress-only Wordfence CVE templates; too narrow in scope |
 | `tags: wordpress` | WordPress plugin/theme templates generate excessive noise; nuclei is not the right tool for bulk WP scanning |
+| CJK characters in filename or content | Templates targeting Chinese/Japanese/Korean enterprise software; unmaintainable without language context |
 | Empty-MD5 stubs | Auto-generated placeholder files with no real content |
 | Status-200-only matchers | No body/header check; high false-positive rate |
 | `compare_versions('>0')` | Always-true version check; matches everything |

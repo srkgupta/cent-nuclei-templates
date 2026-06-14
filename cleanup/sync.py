@@ -46,6 +46,11 @@ EXCLUDED_AUTHORS = {"topscoder"}
 # bulk WP scanning and these templates generate excessive noise.
 EXCLUDED_TAGS = {"wordpress"}
 
+# Regex matching CJK characters (Chinese/Japanese/Korean).
+# Templates with CJK in the filename or content are excluded: they target
+# region-specific software and are unmaintainable without language context.
+CJK_RE = re.compile(r'[一-鿿　-〿＀-￯㐀-䶿]')
+
 # Identical to quality_score.py — keep in sync if scoring changes
 GENERIC_WORDS = {
     "http", "dns", "backup", "player", "stream", "evil",
@@ -240,6 +245,11 @@ def main() -> None:
                 stats["skip_excluded_author"] += 1
                 continue
 
+            # CJK filename or content exclusion
+            if CJK_RE.search(fpath.name) or CJK_RE.search(fpath.read_text(errors="ignore")):
+                stats["skip_cjk"] += 1
+                continue
+
             # Tag exclusion (e.g. wordpress)
             tags = get_tags(fpath)
             if tags & EXCLUDED_TAGS:
@@ -313,12 +323,13 @@ def main() -> None:
                          ('skip_duplicate_id', 'skip_duplicate_content',
                           'skip_no_id', 'skip_empty_md5_stub',
                           'skip_error', 'skip_excluded_author',
-                          'skip_excluded_tag'))
+                          'skip_excluded_tag', 'skip_cjk'))
     print("=" * 55)
     print(f"  Staging templates scanned:  {stats['total']:>6,}")
     print(f"  Skipped (known ID):         {stats['skip_duplicate_id']:>6,}")
     print(f"  Skipped (empty-MD5 stubs):  {stats['skip_empty_md5_stub']:>6,}")
     print(f"  Skipped (excluded authors): {stats['skip_excluded_author']:>6,}")
+    print(f"  Skipped (CJK content):      {stats['skip_cjk']:>6,}")
     print(f"  Skipped (excluded tags):    {stats['skip_excluded_tag']:>6,}")
     print(f"  Skipped (content dup):      {stats['skip_duplicate_content']:>6,}")
     print(f"  Skipped (no id field):      {stats['skip_no_id']:>6,}")
