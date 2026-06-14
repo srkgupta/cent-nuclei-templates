@@ -51,6 +51,23 @@ EXCLUDED_TAGS = {"wordpress"}
 # region-specific software and are unmaintainable without language context.
 CJK_RE = re.compile(r'[一-鿿　-〿＀-￯㐀-䶿]')
 
+# Hardcoded researcher-controlled OOB callback domains.
+# Templates must use nuclei's {{interactsh-url}} placeholder instead.
+# Pattern is anchored so "notburpcollaborator.net" (SSRF negative-test) is not flagged.
+_OOB_RE = re.compile(
+    r'(?<![a-z])'  # not preceded by a letter — excludes "notburpcollaborator.net"
+    r'(?:'
+    r'[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.dnslog\.cn'
+    r'|burpcollaborator\.net'
+    r'|[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.oast\.(fun|me|site|online|pro)'
+    r'|webhook\.site/[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}'
+    r')',
+    re.IGNORECASE,
+)
+
+# Long hex runs that may be binary payloads with embedded OOB URLs.
+_HEX_PAYLOAD_RE = re.compile(r'[0-9a-fA-F]{80,}')
+
 # Identical to quality_score.py — keep in sync if scoring changes
 GENERIC_WORDS = {
     "http", "dns", "backup", "player", "stream", "evil",
@@ -106,14 +123,45 @@ def file_md5(fpath: Path) -> str:
     return h.hexdigest()
 
 
+def _oob_check(content: str) -> str | None:
+    """Return a reason string if hardcoded OOB callback domains are found, else None.
+
+    Scans non-comment lines for known researcher-controlled OOB domains, then
+    decodes any long hex strings and repeats the check inside them (catches
+    ysoserial URLDNS payloads and similar binary blobs with embedded URLs).
+    """
+    import binascii
+
+    for line in content.splitlines():
+        if line.lstrip().startswith('#'):
+            continue
+        if _OOB_RE.search(line):
+            return "hardcoded_oob_domain"
+
+    for hex_match in _HEX_PAYLOAD_RE.finditer(content):
+        try:
+            decoded = binascii.unhexlify(hex_match.group()).decode('latin-1')
+            if _OOB_RE.search(decoded):
+                return "hardcoded_oob_domain_in_hex"
+        except Exception:
+            pass
+
+    return None
+
+
 def quality_check(fpath: Path) -> tuple[bool, str]:
     """Return (passes, reason). Mirrors all removal decisions made to date."""
     try:
-        data = yaml.safe_load(fpath.read_text(errors="ignore"))
+        raw = fpath.read_text(errors="ignore")
+        data = yaml.safe_load(raw)
         if not isinstance(data, dict):
             return False, "invalid_yaml"
     except Exception:
         return False, "parse_error"
+
+    oob_reason = _oob_check(raw)
+    if oob_reason:
+        return False, oob_reason
 
     http = data.get("http") or data.get("requests") or []
     if isinstance(http, dict):
