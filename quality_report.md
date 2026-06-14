@@ -1,107 +1,122 @@
 # Template Quality Report
 
-Scanned **12,138** templates (4 parse errors skipped).
+Scanned **21,767** templates (5 parse errors skipped).
 
 ## Tier Summary
 
 | Tier | Description | Count |
 |------|-------------|------:|
-| **1-cull** | score 0-20:  status-only / no matchers / always-true version check | 0 |
-| **2-review** | score 21-45: weak matchers, OR conditions, readme-only paths | 15 |
-| **3-acceptable** | score 46-70: standard version-detection pattern | 3,510 |
-| **4-good** | score 71-100: proper matchers, active probes, tight fingerprints | 8,613 |
+| **1-cull** | score 0-20:  status-only / no matchers / always-true version check | 2 |
+| **2-review** | score 21-45: weak matchers, OR conditions, readme-only paths | 150 |
+| **3-acceptable** | score 46-70: standard version-detection pattern | 7,963 |
+| **4-good** | score 71-100: proper matchers, active probes, tight fingerprints | 13,652 |
 
 ## Flag Counts
 
 | Flag | Count | Meaning |
 |------|------:|---------|
-| `strong_and_matchers` | 10,422 | 3+ matchers all required (AND condition) - good |
-| `readme_only_path` | 9,772 | Only fetches readme.txt - presence detection, not exploit |
-| `cve_tagged_missing_cve_id` | 3,008 | CVE tag present but no cve-id in classification |
-| `active_probe_path` | 1,736 | Non-readme.txt endpoint - targeted probe |
-| `single_weak_word_matcher` | 538 | Word matcher with a single string <= 6 chars |
-| `has_regex_matcher` | 263 | Uses regex for tighter fingerprinting (good) |
-| `no_http_block` | 237 |  |
-| `active_probe_method` | 54 | Uses POST/PUT/PATCH - actual exploit attempt |
-| `or_condition_matchers` | 27 | Any single weak matcher is enough to fire |
+| `strong_and_matchers` | 11,623 | 3+ matchers all required (AND condition) - good |
+| `readme_only_path` | 9,784 | Only fetches readme.txt - presence detection, not exploit |
+| `active_probe_path` | 6,221 | Non-readme.txt endpoint - targeted probe |
+| `cve_tagged_missing_cve_id` | 3,377 | CVE tag present but no cve-id in classification |
+| `has_regex_matcher` | 1,990 | Uses regex for tighter fingerprinting (good) |
+| `active_probe_method` | 1,108 | Uses POST/PUT/PATCH - actual exploit attempt |
+| `single_weak_word_matcher` | 972 | Word matcher with a single string <= 6 chars |
+| `no_http_block` | 462 |  |
+| `or_condition_matchers` | 239 | Any single weak matcher is enough to fire |
 
 ## Breakdown by Tier and Severity
 
-### 1-cull (0 templates)
-
-### 2-review (15 templates)
+### 1-cull (2 templates)
 
 | Severity | Count |
 |----------|------:|
-| Critical | 2 |
-| High | 4 |
-| Medium | 2 |
-| Info | 7 |
+| Critical | 1 |
+| Info | 1 |
 
 <details><summary>Sample worst templates (lowest score first)</summary>
 
 | File | Severity | Score | Flags |
 |------|----------|------:|-------|
+| `origin-wildcard-check.yaml` | critical | 15 | or_condition_matchers |
+| `tomcat-found.yaml` | info | 20 | or_condition_matchers|single_weak_word_matcher |
+
+</details>
+
+### 2-review (150 templates)
+
+| Severity | Count |
+|----------|------:|
+| Critical | 14 |
+| High | 39 |
+| Medium | 15 |
+| Low | 18 |
+| Info | 64 |
+
+<details><summary>Sample worst templates (lowest score first)</summary>
+
+| File | Severity | Score | Flags |
+|------|----------|------:|-------|
+| `dahua-icc-rce.yaml` | critical | 30 | cve_tagged_missing_cve_id|or_condition_matchers |
+| `CVE-2021-42183_1.yaml` | critical | 35 | or_condition_matchers |
+| `weed-fs.yaml` | critical | 35 | or_condition_matchers |
+| `fanwei_eoffice_json_common_sqli.yaml` | critical | 40 | single_weak_word_matcher |
+| `yunanbao_config_fastjson_rce.yaml` | critical | 40 | single_weak_word_matcher |
+| `CVE-2022-40684_1.yaml` | critical | 45 | or_condition_matchers |
+| `CVE-2024-0507-rce.yaml` | critical | 45 | cve_tagged_missing_cve_id|single_weak_word_matcher |
 | `cve-2017-3881-3017.yaml` | critical | 45 | cve_tagged_missing_cve_id|no_http_block |
-| `cve-2020-7247-5247.yaml` | critical | 45 | cve_tagged_missing_cve_id|no_http_block |
-| `CVE-2020-7048.yaml` | high | 45 | or_condition_matchers|active_probe_path |
-| `cve-2015-3306-2506.yaml` | high | 45 | cve_tagged_missing_cve_id|no_http_block |
-| `symfony-debugmode-10623.yaml` | high | 45 | or_condition_matchers|active_probe_path |
-| `time-sqlinjection-uri-finder.yaml` | high | 45 | or_condition_matchers|active_probe_path |
-| `cve-2018-8006-3631.yaml` | medium | 45 | cve_tagged_missing_cve_id|single_weak_word_matcher|active_probe_path |
-| `express-lfr-post.yaml` | medium | 45 | or_condition_matchers|active_probe_path |
 
 </details>
 
-### 3-acceptable (3,510 templates)
+### 3-acceptable (7,963 templates)
 
 | Severity | Count |
 |----------|------:|
-| Critical | 632 |
-| High | 980 |
-| Medium | 1,621 |
-| Low | 34 |
-| Info | 235 |
-| Unknown | 8 |
+| Critical | 1,297 |
+| High | 2,353 |
+| Medium | 2,260 |
+| Low | 414 |
+| Info | 1,610 |
+| Unknown | 24 |
 
 <details><summary>Sample worst templates (lowest score first)</summary>
 
 | File | Severity | Score | Flags |
 |------|----------|------:|-------|
+| `CVE-2015-2208.yaml` | critical | 50 | cve_tagged_missing_cve_id |
+| `CVE-2017-12149-2.yaml` | critical | 50 | cve_tagged_missing_cve_id |
+| `CVE-2017-12149_1.yaml` | critical | 50 | cve_tagged_missing_cve_id |
 | `CVE-2018-0101.yaml` | critical | 50 | cve_tagged_missing_cve_id |
-| `cve-2017-1000486-2847.yaml` | critical | 50 | cve_tagged_missing_cve_id |
-| `cve-2017-12149-2883.yaml` | critical | 50 | cve_tagged_missing_cve_id |
-| `cve-2017-5638-3032.yaml` | critical | 50 | cve_tagged_missing_cve_id |
-| `cve-2020-15505-4613.yaml` | critical | 50 | cve_tagged_missing_cve_id |
-| `cve-2021-26855-5890.yaml` | critical | 50 | cve_tagged_missing_cve_id |
-| `exposed-adb-7281.yaml` | critical | 50 | no_http_block |
-| `ftp-default-creds.yaml` | critical | 50 | no_http_block |
+| `CVE-2018-21246.yaml` | critical | 50 | single_weak_word_matcher|active_probe_path |
+| `CVE-2018-6789.yaml` | critical | 50 | no_http_block |
+| `CVE-2019-10149.yaml` | critical | 50 | no_http_block |
+| `CVE-2019-17571.yaml` | critical | 50 | no_http_block |
 
 </details>
 
-### 4-good (8,613 templates)
+### 4-good (13,652 templates)
 
 | Severity | Count |
 |----------|------:|
-| Critical | 680 |
-| High | 2,261 |
-| Medium | 5,202 |
-| Low | 162 |
-| Info | 300 |
-| Unknown | 8 |
+| Critical | 1,614 |
+| High | 3,405 |
+| Medium | 6,572 |
+| Low | 389 |
+| Info | 1,616 |
+| Unknown | 28 |
 
 <details><summary>Sample worst templates (lowest score first)</summary>
 
 | File | Severity | Score | Flags |
 |------|----------|------:|-------|
 | `AVTECH-login-bypass.yaml` | critical | 75 | active_probe_path |
+| `AssetNote-RCE.yaml` | critical | 75 | active_probe_path |
 | `CNVD-2019-17294.yaml` | critical | 75 | strong_and_matchers |
 | `CNVD-2021-01627.yaml` | critical | 75 | strong_and_matchers |
+| `CNVD-2021-30167.yaml.yaml` | critical | 75 | active_probe_path |
 | `CVE-2003-1599.yaml` | critical | 75 | active_probe_path |
 | `CVE-2006-4028.yaml` | critical | 75 | active_probe_path |
 | `CVE-2007-0107.yaml` | critical | 75 | active_probe_path |
-| `CVE-2007-1277.yaml` | critical | 75 | active_probe_path |
-| `CVE-2007-3544.yaml` | critical | 75 | active_probe_path |
 
 </details>
 

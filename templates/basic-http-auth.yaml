@@ -1,0 +1,13 @@
+file:
+- extensions:
+  - all
+  extractors:
+  - regex:
+    - (?<=:\:\/\/)[a-zA-Z0-9]+:[a-zA-Z0-9]+(?:\@[a-zA-Z0-9]+.[a-zA-Z]+)
+    type: regex
+id: basic-http-auth
+info:
+  author: Arqsz
+  name: Basic authentication detection
+  severity: high
+  tags: filesystem,secrets,http

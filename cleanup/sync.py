@@ -52,10 +52,10 @@ GENERIC_WORDS = {
 def get_author(fpath: Path) -> str:
     try:
         with open(fpath, "r", errors="ignore") as f:
-            for line in f:
+            for i, line in enumerate(f):
                 if line.strip().startswith("author:"):
                     return line.split(":", 1)[1].strip()
-                if f.tell() > 1024:
+                if i > 30:
                     break
     except OSError:
         pass
@@ -65,10 +65,10 @@ def get_author(fpath: Path) -> str:
 def get_id(fpath: Path) -> str | None:
     try:
         with open(fpath, "r", errors="ignore") as f:
-            for line in f:
+            for i, line in enumerate(f):
                 if line.startswith("id:"):
                     return line[3:].strip()
-                if f.tell() > 512:
+                if i > 20:
                     break
     except OSError:
         pass
