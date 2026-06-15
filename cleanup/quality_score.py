@@ -26,6 +26,25 @@ TEMPLATES_DIR = REPO_ROOT / "templates"
 
 SEVERITY_ORDER = ["critical", "high", "medium", "low", "info", "unknown"]
 
+# Words that appear routinely in any web/API response and provide no discriminating
+# signal on their own. Keep in sync with GENERIC_BODY_WORDS in sync.py.
+GENERIC_BODY_WORDS = {
+    "code", "count", "data", "result", "results", "value", "values",
+    "name", "names", "type", "types", "id", "ids", "key", "keys",
+    "list", "items", "item", "total", "page", "size", "limit", "offset",
+    "status", "message", "msg", "error", "errors", "success", "ok",
+    "response", "info", "detail", "details", "content", "body", "payload",
+    "text", "title", "url", "path", "link", "href", "src",
+    "time", "date", "created", "updated",
+    "user", "users", "role", "roles", "group", "groups",
+    "html", "head", "script", "style", "meta", "form", "input",
+    "class", "div", "span", "table",
+    "root", "home", "server", "host", "system", "config", "version",
+    "api", "true", "false", "null", "none",
+    "http", "dns", "backup", "player", "stream", "evil",
+    "team", "canvas", "erp", "bridge",
+}
+
 
 def severity_rank(s: str) -> int:
     try:
@@ -106,6 +125,19 @@ def score_template(data: dict) -> tuple[int, list[str]]:
 
         # Word matcher quality
         word_matchers = [m for m in matchers if m.get("type") == "word"]
+        # Body word matchers only: interactsh_protocol/header/cookie etc. have
+        # different semantics and are not subject to the generic-word check.
+        body_word_matchers = [
+            m for m in word_matchers
+            if (m.get("part") or "body") == "body"
+        ]
+        # A non-body word matcher (interactsh_protocol, header) or a regex/dsl
+        # matcher counts as a tighter signal that exempts from the generic check.
+        has_strong_matcher = any(
+            m.get("type") in ("regex", "dsl") or
+            (m.get("type") == "word" and (m.get("part") or "body") != "body")
+            for m in matchers
+        )
         if word_matchers:
             all_body = all((m.get("part") or "body") == "body" for m in word_matchers)
             if all_body:
@@ -117,6 +149,18 @@ def score_template(data: dict) -> tuple[int, list[str]]:
                     flags.append("single_weak_word_matcher")
                     break
 
+            # All-generic body word matchers: every word across every BODY word
+            # matcher is a common web/API term, and no tighter signal exists.
+            if body_word_matchers and not has_strong_matcher:
+                all_words = [
+                    str(w).lower()
+                    for wm in body_word_matchers
+                    for w in (wm.get("words") or [])
+                ]
+                if all_words and all(w in GENERIC_BODY_WORDS for w in all_words):
+                    score -= 25
+                    flags.append("generic_body_words")
+
         # Regex matchers are a quality signal (tight fingerprint)
         if any(m.get("type") == "regex" for m in matchers):
             score += 15
@@ -127,6 +171,14 @@ def score_template(data: dict) -> tuple[int, list[str]]:
         if readme_only:
             score -= 10
             flags.append("readme_only_path")
+
+        # Excessive path sweep with weak matchers: 20+ paths but only status+word
+        # checks means a weak body match fires across dozens of unrelated URLs.
+        if len(paths) > 20 and not has_strong_matcher and not any(
+            m.get("type") == "dsl" for m in matchers
+        ):
+            score -= 10
+            flags.append("excessive_path_sweep")
 
         # Active probe: non-GET method or non-readme endpoint
         if method in ("POST", "PUT", "PATCH", "DELETE"):
@@ -263,6 +315,8 @@ def main() -> None:
         "always_true_version_check":  "compare_versions('>0') matches every plugin install",
         "or_condition_matchers":      "Any single weak matcher is enough to fire",
         "single_weak_word_matcher":   "Word matcher with a single string <= 6 chars",
+        "generic_body_words":         "All word matcher words are common web/API terms (code/data/result/etc) with no tight signal",
+        "excessive_path_sweep":       "20+ paths with only status+word checks - weak match fires across many unrelated URLs",
         "readme_only_path":           "Only fetches readme.txt - presence detection, not exploit",
         "cve_tagged_missing_cve_id":  "CVE tag present but no cve-id in classification",
         "deprecated_requests_key":    "Uses v2 'requests:' key instead of 'http:'",

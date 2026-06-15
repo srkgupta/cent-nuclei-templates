@@ -68,11 +68,35 @@ _OOB_RE = re.compile(
 # Long hex runs that may be binary payloads with embedded OOB URLs.
 _HEX_PAYLOAD_RE = re.compile(r'[0-9a-fA-F]{80,}')
 
-# Identical to quality_score.py — keep in sync if scoring changes
-GENERIC_WORDS = {
+# Words that appear routinely in any web/API response and provide no discriminating
+# signal when used as the sole content check in a word matcher.
+# Applied in two ways:
+#   1. Single-word check (original): one word from this set -> reject
+#   2. All-generic check (new): ALL words in a word matcher from this set + no
+#      regex/dsl/header matcher providing a tighter signal -> reject
+# Keep in sync with GENERIC_BODY_WORDS in quality_score.py.
+GENERIC_BODY_WORDS = {
+    # Common JSON API field names - appear in virtually any API response
+    "code", "count", "data", "result", "results", "value", "values",
+    "name", "names", "type", "types", "id", "ids", "key", "keys",
+    "list", "items", "item", "total", "page", "size", "limit", "offset",
+    "status", "message", "msg", "error", "errors", "success", "ok",
+    "response", "info", "detail", "details", "content", "body", "payload",
+    "text", "title", "url", "path", "link", "href", "src",
+    "time", "date", "created", "updated",
+    "user", "users", "role", "roles", "group", "groups",
+    # Common HTML/DOM words
+    "html", "head", "script", "style", "meta", "form", "input",
+    "class", "div", "span", "table",
+    # Common system/server words
+    "root", "home", "server", "host", "system", "config", "version",
+    "api", "true", "false", "null", "none",
+    # Original narrow set kept for backward compat
     "http", "dns", "backup", "player", "stream", "evil",
     "team", "canvas", "erp", "bridge",
 }
+# Alias for the original single-word path (kept for clarity at call site)
+GENERIC_WORDS = GENERIC_BODY_WORDS
 
 
 def get_author(fpath: Path) -> str:
@@ -193,11 +217,35 @@ def quality_check(fpath: Path) -> tuple[bool, str]:
                 if isinstance(expr, str) and ("'>0'" in expr or '">0"' in expr):
                     return False, "always_true_version_check"
 
-        # Generic sole-word matcher
-        for wm in (m for m in matchers if m.get("type") == "word"):
-            words = [str(w) for w in (wm.get("words") or [])]
-            if len(words) == 1 and words[0].lower() in GENERIC_WORDS:
-                return False, f"generic_word:{words[0].lower()}"
+        # Generic word matchers: reject when no word matcher provides a real signal.
+        # Only applies to BODY word matchers (part=body or unset); non-body parts
+        # (interactsh_protocol, header, cookie) have different semantics and are
+        # counted as strong signals that exempt the template from this check.
+        word_matchers = [m for m in matchers if m.get("type") == "word"]
+        body_word_matchers = [
+            m for m in word_matchers
+            if (m.get("part") or "body") == "body"
+        ]
+        has_strong_matcher = any(
+            m.get("type") in ("regex", "dsl") or
+            (m.get("type") == "word" and (m.get("part") or "body") != "body")
+            for m in matchers
+        )
+        if body_word_matchers and not has_strong_matcher:
+            for wm in body_word_matchers:
+                words = [str(w) for w in (wm.get("words") or [])]
+                # Case 1: single generic word
+                if len(words) == 1 and words[0].lower() in GENERIC_BODY_WORDS:
+                    return False, f"generic_word:{words[0].lower()}"
+            # Case 2: every word across every body word matcher is generic
+            all_words = [
+                str(w).lower()
+                for wm in body_word_matchers
+                for w in (wm.get("words") or [])
+            ]
+            if all_words and all(w in GENERIC_BODY_WORDS for w in all_words):
+                sample = ",".join(all_words[:4])
+                return False, f"all_generic_words:{sample}"
 
     return True, "ok"
 

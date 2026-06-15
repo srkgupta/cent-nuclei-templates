@@ -1,7 +1,7 @@
 # cent-nuclei-templates
 Cent Nuclei Templates generated through the [cent tool](https://github.com/xm1k3/cent)
 
-This repo contains **9,331 quality-filtered nuclei templates** sourced from the cent tool and curated against the [core nuclei-templates](https://github.com/projectdiscovery/nuclei-templates).
+This repo contains **9,284 quality-filtered nuclei templates** sourced from the cent tool and curated against the [core nuclei-templates](https://github.com/projectdiscovery/nuclei-templates).
 
 ### What was done to clean this up
 
@@ -24,13 +24,13 @@ The collection was built in two phases:
 
 | Severity | Count |
 |----------|------:|
-| Critical | 1,503 |
-| High     | 2,044 |
-| Medium   | 1,996 |
-| Low      |   685 |
-| Info     | 3,032 |
-| Unknown  |    62 |
-| **Total**| **9,331** |
+| Critical | 1,486 |
+| High     | 2,036 |
+| Medium   | 1,987 |
+| Low      |   681 |
+| Info     | 3,025 |
+| Unknown  |    36 |
+| **Total**| **9,284** |
 
 ### What is excluded
 
@@ -45,6 +45,7 @@ The following categories are explicitly excluded from this collection and from f
 | Status-200-only matchers | No body/header check; high false-positive rate |
 | `compare_versions('>0')` | Always-true version check; matches everything |
 | Generic sole-word matchers | Single common word (`http`, `dns`, `backup`, etc.) as the only signal |
+| All-generic body word matchers | Every word in every body word matcher is a common web/API term (`code`, `data`, `result`, `root`, etc.) with no regex/dsl/non-body matcher providing a tighter signal |
 
 ### Maintenance
 

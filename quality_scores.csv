@@ -3,9 +3,10 @@ origin-wildcard-check.yaml,critical,15,1-cull,or_condition_matchers
 dahua-icc-rce.yaml,critical,30,2-review,cve_tagged_missing_cve_id|or_condition_matchers
 CVE-2021-42183_1.yaml,critical,35,2-review,or_condition_matchers
 weed-fs.yaml,critical,35,2-review,or_condition_matchers
+CVE-2022-46169_2.yaml,critical,40,2-review,single_weak_word_matcher
 fanwei_eoffice_json_common_sqli.yaml,critical,40,2-review,single_weak_word_matcher
+CVE-2019-18394-4012.yaml,critical,45,2-review,cve_tagged_missing_cve_id|single_weak_word_matcher|active_probe_path
 CVE-2022-40684_1.yaml,critical,45,2-review,or_condition_matchers
-CVE-2024-0507-rce.yaml,critical,45,2-review,cve_tagged_missing_cve_id|single_weak_word_matcher
 cve-2017-3881-3017.yaml,critical,45,2-review,cve_tagged_missing_cve_id|no_http_block
 cve-2020-7247-5247.yaml,critical,45,2-review,cve_tagged_missing_cve_id|no_http_block
 etcd.yaml,critical,45,2-review,or_condition_matchers
@@ -242,6 +243,7 @@ xml-external-entities-XMLInputFactory.yaml,critical,50,3-acceptable,no_http_bloc
 xml-external-entities-XMLReader.yaml,critical,50,3-acceptable,no_http_block
 yonyou-nc-cloud-Upload.yaml,critical,50,3-acceptable,single_weak_word_matcher
 5.3.4.yaml,critical,55,3-acceptable,
+CVE-2017-9805-2.yaml,critical,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher
 CVE-2021-28918-1.yaml,critical,55,3-acceptable,cve_tagged_missing_cve_id|or_condition_matchers|has_regex_matcher
 CVE-2021-28918-2.yaml,critical,55,3-acceptable,cve_tagged_missing_cve_id|or_condition_matchers|has_regex_matcher
 CVE-2021-28918-3.yaml,critical,55,3-acceptable,cve_tagged_missing_cve_id|or_condition_matchers|has_regex_matcher
@@ -271,6 +273,7 @@ adobe-aem-default-credentials9.yaml,critical,55,3-acceptable,
 apmarketplace-sqlinj.yaml,critical,55,3-acceptable,
 buffalo-config-injection-798.yaml,critical,55,3-acceptable,
 chanjet-TPlus-FileUploadHandler-uploadfile.yaml,critical,55,3-acceptable,
+cve-2017-9805-3102.yaml,critical,55,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher
 cyberpanel-upgrademysqlstatus-rce.yaml,critical,55,3-acceptable,
 dahua-zhinengwulian-GetClassValue-rce.yaml,critical,55,3-acceptable,
 dos.yaml,critical,55,3-acceptable,
@@ -311,7 +314,6 @@ yongyou-grouptemplet-upload.yaml,critical,55,3-acceptable,
 yonyou-U8clouderp-upload-uploadfile.yaml,critical,55,3-acceptable,
 yonyou-u8-cloud-businessrefaction-sqli.yaml,critical,55,3-acceptable,
 CVE-2014-9390.yaml,critical,60,3-acceptable,single_weak_word_matcher|active_probe_path
-CVE-2017-9805-2.yaml,critical,60,3-acceptable,cve_tagged_missing_cve_id
 CVE-2018-10561.yaml,critical,60,3-acceptable,single_weak_word_matcher|active_probe_path
 CVE-2018-10824.yaml,critical,60,3-acceptable,single_weak_word_matcher|active_probe_path
 CVE-2018-17431-1.yaml,critical,60,3-acceptable,cve_tagged_missing_cve_id
@@ -352,7 +354,6 @@ CVE-2025-7775.yaml,critical,60,3-acceptable,cve_tagged_missing_cve_id|active_pro
 CVE-2026-48907.yaml,critical,60,3-acceptable,single_weak_word_matcher
 XSS_test.yaml,critical,60,3-acceptable,cve_tagged_missing_cve_id
 apache-httpd-rce-362.yaml,critical,60,3-acceptable,cve_tagged_missing_cve_id
-cve-2017-9805-3102.yaml,critical,60,3-acceptable,cve_tagged_missing_cve_id
 cve-2018-1207-3230.yaml,critical,60,3-acceptable,cve_tagged_missing_cve_id|active_probe_path
 cve-2018-17431-3424.yaml,critical,60,3-acceptable,cve_tagged_missing_cve_id
 cve-2019-9733-4312.yaml,critical,60,3-acceptable,cve_tagged_missing_cve_id
@@ -435,7 +436,6 @@ CVE-2022-31657.yaml,critical,65,3-acceptable,active_probe_path
 CVE-2022-32095.yaml,critical,65,3-acceptable,active_probe_path
 CVE-2022-34132.yaml,critical,65,3-acceptable,active_probe_path
 CVE-2022-44727.yaml,critical,65,3-acceptable,
-CVE-2022-46169_2.yaml,critical,65,3-acceptable,
 CVE-2022-48011.yaml,critical,65,3-acceptable,active_probe_path
 CVE-2023-23156.yaml,critical,65,3-acceptable,active_probe_path
 CVE-2023-33362.yaml,critical,65,3-acceptable,active_probe_path
@@ -533,13 +533,11 @@ yonyou-chanjet-tplus-setupaccount-fileupload.yaml,critical,65,3-acceptable,
 yonyou-u8-upload-fileupload.yaml,critical,65,3-acceptable,
 yonyou-uploadApk-fileupload.yaml,critical,65,3-acceptable,
 CVE-2018-2894 2.yaml,critical,70,3-acceptable,cve_tagged_missing_cve_id|active_probe_path
-CVE-2019-18394-4012.yaml,critical,70,3-acceptable,cve_tagged_missing_cve_id|active_probe_path
 CVE-2019-5127-1.yaml,critical,70,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers
 CVE-2019-5127-2.yaml,critical,70,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers
 CVE-2019-5127-3.yaml,critical,70,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers
 CVE-2020-1957.yaml,critical,70,3-acceptable,cve_tagged_missing_cve_id|active_probe_path
 CVE-2020-6287.yaml,critical,70,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers
-CVE-2021-26295-5856.yaml,critical,70,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers
 CVE-2021-28073-1.yaml,critical,70,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers
 CVE-2021-28073-2.yaml,critical,70,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers
 CVE-2021-3064.yaml,critical,70,3-acceptable,or_condition_matchers|has_regex_matcher|active_probe_path
@@ -635,7 +633,6 @@ CVE-2020-10212.yaml,critical,75,4-good,active_probe_path
 CVE-2020-11552.yaml,critical,75,4-good,active_probe_path
 CVE-2020-11819.yaml,critical,75,4-good,active_probe_path
 CVE-2020-11857.yaml,critical,75,4-good,active_probe_path
-CVE-2020-11989.yaml,critical,75,4-good,single_weak_word_matcher|active_probe_method
 CVE-2020-11998.yaml,critical,75,4-good,active_probe_path
 CVE-2020-12735.yaml,critical,75,4-good,active_probe_path
 CVE-2020-13381.yaml,critical,75,4-good,active_probe_path
@@ -744,7 +741,6 @@ CVE-2021-44676.yaml,critical,75,4-good,active_probe_path
 CVE-2021-45330.yaml,critical,75,4-good,active_probe_path
 CVE-2021-46036.yaml,critical,75,4-good,single_weak_word_matcher|active_probe_method
 CVE-2021-46067.yaml,critical,75,4-good,active_probe_path
-CVE-2021-46386.yaml,critical,75,4-good,single_weak_word_matcher|active_probe_method
 CVE-2022-0332.yaml,critical,75,4-good,active_probe_path
 CVE-2022-0860.yaml,critical,75,4-good,active_probe_path
 CVE-2022-0871.yaml,critical,75,4-good,active_probe_path
@@ -771,7 +767,6 @@ CVE-2022-23337.yaml,critical,75,4-good,active_probe_path
 CVE-2022-23379.yaml,critical,75,4-good,active_probe_path
 CVE-2022-23943.yaml,critical,75,4-good,active_probe_path
 CVE-2022-24989.yaml,critical,75,4-good,single_weak_word_matcher|active_probe_method
-CVE-2022-25060.yaml,critical,75,4-good,single_weak_word_matcher|active_probe_method
 CVE-2022-25402.yaml,critical,75,4-good,active_probe_path
 CVE-2022-25403.yaml,critical,75,4-good,active_probe_path
 CVE-2022-25490.yaml,critical,75,4-good,active_probe_path
@@ -859,6 +854,7 @@ CVE-2024-21762-check.yaml,critical,75,4-good,
 CVE-2024-40453.yaml,critical,75,4-good,active_probe_path
 CVE-2024-4320.yaml,critical,75,4-good,
 CVE-2024-44902.yaml,critical,75,4-good,active_probe_path
+CVE-2024-53677.yaml,critical,75,4-good,cve_tagged_missing_cve_id|excessive_path_sweep|active_probe_method
 CVE-2026-44551.yaml,critical,75,4-good,
 CVE-2026-48710.yaml,critical,75,4-good,
 CVE202127562-220331-222408.yaml,critical,75,4-good,active_probe_path
@@ -911,7 +907,6 @@ cve-2020-17530-4698.yaml,critical,75,4-good,cve_tagged_missing_cve_id|has_regex_
 cve-2020-7209-5238.yaml,critical,75,4-good,cve_tagged_missing_cve_id|has_regex_matcher|active_probe_path
 cve-2020-9054-5366.yaml,critical,75,4-good,cve_tagged_missing_cve_id|has_regex_matcher|active_probe_path
 cve-2021-33564-6185.yaml,critical,75,4-good,cve_tagged_missing_cve_id|has_regex_matcher|active_probe_path
-dataease-cve-2025-49001-49002.yaml,critical,75,4-good,
 docker-compose-yml.yaml,critical,75,4-good,active_probe_path
 extplorer-login-bypass_1.yaml,critical,75,4-good,strong_and_matchers
 flask-debug-exposure.yaml,critical,75,4-good,active_probe_path
@@ -1010,6 +1005,7 @@ aspnet-appsettings-json-exposure.yaml,critical,80,4-good,has_regex_matcher|activ
 aspnet-debug-enabled.yaml,critical,80,4-good,has_regex_matcher|active_probe_path
 aspnet-webconfig-exposure.yaml,critical,80,4-good,has_regex_matcher|active_probe_path
 cve-2017-12542-2887.yaml,critical,80,4-good,cve_tagged_missing_cve_id|strong_and_matchers|active_probe_path
+cve-2017-9805-3105.yaml,critical,80,4-good,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|active_probe_method
 cve-2019-13462-3816.yaml,critical,80,4-good,cve_tagged_missing_cve_id|strong_and_matchers|active_probe_path
 cve-2019-15859-3899.yaml,critical,80,4-good,cve_tagged_missing_cve_id|strong_and_matchers|active_probe_path
 cve-2020-26948-4936.yaml,critical,80,4-good,cve_tagged_missing_cve_id|strong_and_matchers|active_probe_path
@@ -1035,7 +1031,6 @@ CVE-2020-26108.yaml,critical,85,4-good,strong_and_matchers|active_probe_path
 CVE-2021-31251.yaml,critical,85,4-good,has_regex_matcher
 CVE-2022-22954_2.yaml,critical,85,4-good,active_probe_path
 CVE-2023-3128.yaml,critical,85,4-good,active_probe_path
-CVE-2024-53677.yaml,critical,85,4-good,cve_tagged_missing_cve_id|active_probe_method
 CVE-2025-2825.yaml,critical,85,4-good,strong_and_matchers
 CVE-2025-29927-HEADLESS-ACTIVE.yaml,critical,85,4-good,strong_and_matchers
 CVE-2025-55182-safe.yaml,critical,85,4-good,strong_and_matchers
@@ -1045,7 +1040,6 @@ UPLOAD-bitrix-vm-restore-upload.yaml,critical,85,4-good,cve_tagged_missing_cve_i
 circarlife-setup-917.yaml,critical,85,4-good,strong_and_matchers|active_probe_path
 cve-2014-3120-2321.yaml,critical,85,4-good,cve_tagged_missing_cve_id|strong_and_matchers|has_regex_matcher
 cve-2015-1427-2468.yaml,critical,85,4-good,cve_tagged_missing_cve_id|strong_and_matchers|has_regex_matcher
-cve-2017-9805-3105.yaml,critical,85,4-good,cve_tagged_missing_cve_id|active_probe_method
 cve-2018-7600-3612.yaml,critical,85,4-good,cve_tagged_missing_cve_id|strong_and_matchers|has_regex_matcher
 cve-2019-10068-3687.yaml,critical,85,4-good,cve_tagged_missing_cve_id|active_probe_method
 cve-2019-17506-3991.yaml,critical,85,4-good,cve_tagged_missing_cve_id|active_probe_method
@@ -1132,7 +1126,6 @@ CVE-2020-22153.yaml,critical,90,4-good,active_probe_method
 CVE-2020-22204.yaml,critical,90,4-good,active_probe_method
 CVE-2020-24791.yaml,critical,90,4-good,active_probe_method
 CVE-2020-24914.yaml,critical,90,4-good,active_probe_method
-CVE-2020-25359.yaml,critical,90,4-good,active_probe_method
 CVE-2020-25409.yaml,critical,90,4-good,active_probe_method
 CVE-2020-26045.yaml,critical,90,4-good,active_probe_method
 CVE-2020-26051.yaml,critical,90,4-good,active_probe_method
@@ -1141,7 +1134,6 @@ CVE-2020-26553.yaml,critical,90,4-good,active_probe_method
 CVE-2020-28020.yaml,critical,90,4-good,active_probe_method
 CVE-2020-28026.yaml,critical,90,4-good,active_probe_method
 CVE-2020-2950.yaml,critical,90,4-good,active_probe_method
-CVE-2020-29592.yaml,critical,90,4-good,active_probe_method
 CVE-2020-35339.yaml,critical,90,4-good,active_probe_method
 CVE-2020-35665.yaml,critical,90,4-good,active_probe_method
 CVE-2020-35760.yaml,critical,90,4-good,active_probe_method
@@ -1155,7 +1147,6 @@ CVE-2020-6143.yaml,critical,90,4-good,active_probe_method
 CVE-2020-6144.yaml,critical,90,4-good,active_probe_method
 CVE-2020-7373.yaml,critical,90,4-good,active_probe_method
 CVE-2020-8000.yaml,critical,90,4-good,active_probe_method
-CVE-2021-20125.yaml,critical,90,4-good,active_probe_method
 CVE-2021-20155.yaml,critical,90,4-good,active_probe_method
 CVE-2021-20658.yaml,critical,90,4-good,active_probe_method
 CVE-2021-23344.yaml,critical,90,4-good,active_probe_method
@@ -1406,7 +1397,6 @@ dreamhack-ping-ci.yaml,critical,95,4-good,has_regex_matcher|active_probe_method
 elfinder-rce.yaml,critical,95,4-good,strong_and_matchers|active_probe_path
 lanhaizhuoyue-debug-rce.yaml,critical,95,4-good,has_regex_matcher|active_probe_method
 webauthn-passkey-bypass.yaml,critical,95,4-good,strong_and_matchers
-wps-unauthorized-rce.yaml,critical,95,4-good,active_probe_path
 CVE-1999-1177.yaml,critical,100,4-good,strong_and_matchers|active_probe_path
 CVE-2012-0694.yaml,critical,100,4-good,active_probe_method|active_probe_path
 CVE-2014-8673.yaml,critical,100,4-good,active_probe_method|single_weak_word_matcher|active_probe_path
@@ -1431,7 +1421,6 @@ CVE-20200924a.yaml,critical,100,4-good,strong_and_matchers|has_regex_matcher|act
 CVE-2021-20149.yaml,critical,100,4-good,single_weak_word_matcher|active_probe_method
 CVE-2021-20151.yaml,critical,100,4-good,active_probe_method
 CVE-2021-26703.yaml,critical,100,4-good,active_probe_method
-CVE-2021-27514.yaml,critical,100,4-good,active_probe_method|active_probe_path
 CVE-2021-36547.yaml,critical,100,4-good,active_probe_method|active_probe_path
 CVE-2021-44567.yaml,critical,100,4-good,active_probe_method
 CVE-2022-1986.yaml,critical,100,4-good,active_probe_method
@@ -1450,13 +1439,10 @@ CVE-2022-35890.yaml,critical,100,4-good,active_probe_method
 CVE-2023-1269.yaml,critical,100,4-good,active_probe_method
 CVE-2023-24734.yaml,critical,100,4-good,active_probe_path|single_weak_word_matcher|active_probe_method
 CVE-2023-24736.yaml,critical,100,4-good,single_weak_word_matcher|active_probe_path|active_probe_method
-CVE-2023-25826.yaml,critical,100,4-good,single_weak_word_matcher|active_probe_path
 CVE-2023-29630.yaml,critical,100,4-good,strong_and_matchers|active_probe_path
 CVE-2023-31060.yaml,critical,100,4-good,active_probe_path|active_probe_method|single_weak_word_matcher
-CVE-2023-39846.yaml,critical,100,4-good,active_probe_path|active_probe_method
 CVE-2023-41543.yaml,critical,100,4-good,active_probe_method|active_probe_path
 CVE-2023-44011.yaml,critical,100,4-good,active_probe_path|active_probe_method
-CVE-2023-4473.yaml,critical,100,4-good,single_weak_word_matcher|active_probe_path
 CVE-2023-5865.yaml,critical,100,4-good,active_probe_method|single_weak_word_matcher|active_probe_path
 CVE-2023-6016.yaml,critical,100,4-good,active_probe_method|active_probe_path
 CVE-2023-6975.yaml,critical,100,4-good,active_probe_method|active_probe_path
@@ -1475,8 +1461,6 @@ CVE-2026-29059.yaml,critical,100,4-good,strong_and_matchers|active_probe_path
 CVE-2026-48558.yaml,critical,100,4-good,strong_and_matchers|active_probe_path
 RCE-bitrix-rce-vulnerabilities.yaml,critical,100,4-good,active_probe_method|active_probe_path
 ScanSSTI.yaml,critical,100,4-good,strong_and_matchers|has_regex_matcher|active_probe_path
-UPLOAD-bitrix-cve-2022-27228.yaml,critical,100,4-good,cve_tagged_missing_cve_id|active_probe_method|active_probe_path
-UPLOAD-bitrix-upload-vulnerabilities.yaml,critical,100,4-good,active_probe_method
 bdu-2026-01517.yaml,critical,100,4-good,strong_and_matchers|has_regex_matcher|active_probe_path
 chrome-devtools-protocol-exposed.yaml,critical,100,4-good,strong_and_matchers|has_regex_matcher|active_probe_path
 container-escape-detection.yaml,critical,100,4-good,has_regex_matcher|active_probe_path|single_weak_word_matcher|active_probe_method
@@ -1573,7 +1557,6 @@ elasticbeantalk-takeover.yaml,high,50,3-acceptable,no_http_block
 ethereum-visibility-flaws.yaml,high,50,3-acceptable,no_http_block
 extra-secrets.yaml,high,50,3-acceptable,no_http_block
 facebook-secrets-filesystem.yaml,high,50,3-acceptable,no_http_block
-flir-login.yaml,high,50,3-acceptable,single_weak_word_matcher
 geoserver-exploit.yaml,high,50,3-acceptable,single_weak_word_matcher
 github-recovery-code.yaml,high,50,3-acceptable,no_http_block
 hardcoded-api-keys.yaml,high,50,3-acceptable,no_http_block
@@ -2004,8 +1987,10 @@ cve-2019-15107-3880.yaml,high,65,3-acceptable,cve_tagged_missing_cve_id|has_rege
 cve-2019-17538-3996.yaml,high,65,3-acceptable,cve_tagged_missing_cve_id|has_regex_matcher
 cve-2019-9670.yaml,high,65,3-acceptable,
 cve-2020-8193-5295.yaml,high,65,3-acceptable,cve_tagged_missing_cve_id|has_regex_matcher
+cve-2021-21315-5506.yaml,high,65,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|active_probe_path
 cve-2025-44148.yaml,high,65,3-acceptable,
 deflogin_TASKalfa.yaml,high,65,3-acceptable,
+dir-traversal.yaml,high,65,3-acceptable,excessive_path_sweep|active_probe_path
 dolibarr-pre-auth.yaml,high,65,3-acceptable,active_probe_path
 e-messageRead.yaml,high,65,3-acceptable,
 ecostruxure-link150_v2.yaml,high,65,3-acceptable,
@@ -2152,6 +2137,7 @@ sony-camera-backdoor.yaml,high,65,3-acceptable,active_probe_path
 spring-actuator-threaddump-exposed.yaml,high,65,3-acceptable,active_probe_path
 spring-boot-ssti.yaml,high,65,3-acceptable,
 sql-injection-getValidEmpForGroup.yaml,high,65,3-acceptable,
+sql-injection-vulnerability.yaml,high,65,3-acceptable,excessive_path_sweep|active_probe_path
 ssrf-detection.yaml,high,65,3-acceptable,active_probe_path
 tiandy-easy7-arbitrary-file-read.yaml,high,65,3-acceptable,
 tomcat-manager-bruteforce.yaml,high,65,3-acceptable,
@@ -2666,6 +2652,7 @@ CVE-2024-21287.yaml,high,75,4-good,active_probe_path
 CVE-2024-23091.yaml,high,75,4-good,active_probe_path
 CVE-2024-36823.yaml,high,75,4-good,active_probe_path
 CVE-2024-42366.yaml,high,75,4-good,active_probe_path
+CVE-2024-44541.yaml,high,75,4-good,cve_tagged_missing_cve_id|excessive_path_sweep|active_probe_method
 CVE-2024-44779.yaml,high,75,4-good,active_probe_path
 CVE-2024-6966.yaml,high,75,4-good,
 CellPower-Agent (copy 1).yaml,high,75,4-good,active_probe_path
@@ -2773,7 +2760,6 @@ delver-sqli.yaml,high,75,4-good,active_probe_path
 detect-jquery-malware.yaml,high,75,4-good,active_probe_path
 dhis-debug.yaml,high,75,4-good,active_probe_path
 dhis-enable-register.yaml,high,75,4-good,active_probe_path
-dir-traversal.yaml,high,75,4-good,active_probe_path
 discourse-takeover.yaml,high,75,4-good,active_probe_path
 django-debugmode(1).yaml,high,75,4-good,active_probe_path
 docker-api-uauth.yaml,high,75,4-good,active_probe_path
@@ -2941,7 +2927,6 @@ springboot-actuators-jolokia-xxe-2.yaml,high,75,4-good,strong_and_matchers
 springboot-actuators-jolokia-xxe1.yaml,high,75,4-good,strong_and_matchers
 springboot-actuators-jolokia-xxe2.yaml,high,75,4-good,strong_and_matchers
 sql-injection-basic.yaml,high,75,4-good,active_probe_path
-sql-injection-vulnerability.yaml,high,75,4-good,active_probe_path
 ssrf-injection.yaml,high,75,4-good,active_probe_path
 superset-default-login-10573.yaml,high,75,4-good,strong_and_matchers
 supervisor-status.yaml,high,75,4-good,active_probe_path
@@ -3038,7 +3023,6 @@ cve-2020-13483-4507.yaml,high,80,4-good,cve_tagged_missing_cve_id|strong_and_mat
 cve-2020-25078-4857.yaml,high,80,4-good,cve_tagged_missing_cve_id|strong_and_matchers|active_probe_path
 cve-2020_26073.yaml,high,80,4-good,has_regex_matcher|active_probe_path
 cve-2020–26073-4903.yaml,high,80,4-good,has_regex_matcher|active_probe_path
-cve-2021-21315-5506.yaml,high,80,4-good,cve_tagged_missing_cve_id|strong_and_matchers|active_probe_path
 darkstat-detect-1.yaml,high,80,4-good,has_regex_matcher
 darkstat-detect-2.yaml,high,80,4-good,has_regex_matcher
 darkstat-detect1.yaml,high,80,4-good,has_regex_matcher
@@ -3072,7 +3056,6 @@ lightdash-lfi.yaml,high,80,4-good,has_regex_matcher|active_probe_path
 linux-lfi.yaml,high,80,4-good,has_regex_matcher|active_probe_path
 local-file-inclusion.yaml,high,80,4-good,has_regex_matcher|active_probe_path
 lotus-core-cms-lfi.yaml,high,80,4-good,has_regex_matcher|active_probe_path
-mcp-grafana-sse-anonymous.yaml,high,80,4-good,single_weak_word_matcher|active_probe_path|strong_and_matchers
 memory-data-leak.yaml,high,80,4-good,has_regex_matcher
 micro-focus-ucmdb-default-credentials.yaml,high,80,4-good,active_probe_method
 nginx-alias-traversal-misconfiguration.yaml,high,80,4-good,has_regex_matcher|active_probe_path
@@ -3111,7 +3094,6 @@ CVE-2021-21402-2.yaml,high,85,4-good,cve_tagged_missing_cve_id|strong_and_matche
 CVE-2022-27256-xss.yaml,high,85,4-good,strong_and_matchers|active_probe_path
 CVE-2022-41040_1.yaml,high,85,4-good,active_probe_path
 CVE-2023-49103_1.yaml,high,85,4-good,active_probe_path
-CVE-2024-44541.yaml,high,85,4-good,cve_tagged_missing_cve_id|active_probe_method
 CVE-2025-53770-auth-bypass.yaml,high,85,4-good,active_probe_path
 CVE-2026-33476.yaml,high,85,4-good,strong_and_matchers
 R7-XSS.yaml,high,85,4-good,strong_and_matchers|active_probe_path
@@ -3170,6 +3152,7 @@ salesforce-login.yaml,high,85,4-good,strong_and_matchers|active_probe_path
 sap-gui-xss.yaml,high,85,4-good,strong_and_matchers|active_probe_path
 sftp-config.yaml,high,85,4-good,strong_and_matchers|active_probe_path
 shikongzhiyou-erp-file-upload.yaml,high,85,4-good,strong_and_matchers|single_weak_word_matcher|has_regex_matcher
+simple-info-disclosure.yaml,high,85,4-good,strong_and_matchers|excessive_path_sweep|active_probe_path
 solar-log-500.yaml,high,85,4-good,strong_and_matchers|active_probe_path
 spring-actuator-env-exposed.yaml,high,85,4-good,strong_and_matchers|active_probe_path
 spring-actuator-gateway-routes-exposed.yaml,high,85,4-good,strong_and_matchers|active_probe_path
@@ -3201,7 +3184,6 @@ CVE-2019-15576.yaml,high,90,4-good,active_probe_method
 CVE-2019-16667.yaml,high,90,4-good,active_probe_method
 CVE-2019-16720.yaml,high,90,4-good,active_probe_method
 CVE-2019-18411.yaml,high,90,4-good,active_probe_method
-CVE-2019-19731.yaml,high,90,4-good,active_probe_method
 CVE-2019-5462.yaml,high,90,4-good,active_probe_method
 CVE-2019-5472.yaml,high,90,4-good,active_probe_method
 CVE-2020-10204_1.yaml,high,90,4-good,active_probe_method
@@ -3361,7 +3343,6 @@ CVE-2025-52478.yaml,high,90,4-good,cve_tagged_missing_cve_id|strong_and_matchers
 CVE-2025-52914.yaml,high,90,4-good,cve_tagged_missing_cve_id|strong_and_matchers|active_probe_path
 CVE-2025-62726.yaml,high,90,4-good,cve_tagged_missing_cve_id|strong_and_matchers|active_probe_path
 CVE-2025-68461.yaml,high,90,4-good,cve_tagged_missing_cve_id|strong_and_matchers|active_probe_path
-UPLOAD-2025-06613-bitrix-html-editor-action.yaml,high,90,4-good,active_probe_method
 UniFi-Default-Login.yaml,high,90,4-good,active_probe_method
 ai-dir-listing.yaml,high,90,4-good,has_regex_matcher|active_probe_path
 alibaba-canal-default-password.yaml,high,90,4-good,active_probe_method
@@ -3438,7 +3419,6 @@ htmllawed-rce.yaml,high,95,4-good,has_regex_matcher|active_probe_method
 landray-oa-file-read.yaml,high,95,4-good,has_regex_matcher|active_probe_method
 openclaw-mattermost-command-inject.yaml,high,95,4-good,has_regex_matcher|active_probe_method
 s3-bucket-takeover.yaml,high,95,4-good,active_probe_path
-simple-info-disclosure.yaml,high,95,4-good,strong_and_matchers|active_probe_path
 u8cloud-filtercondaction-sqli.yaml,high,95,4-good,strong_and_matchers|active_probe_path
 5.3.9.yaml,high,100,4-good,strong_and_matchers|has_regex_matcher
 CNVD-2021-30167-1.yaml,high,100,4-good,strong_and_matchers|has_regex_matcher
@@ -3450,12 +3430,9 @@ CVE-2015-1583.yaml,high,100,4-good,active_probe_method
 CVE-2019-16645.yaml,high,100,4-good,active_probe_method
 CVE-2020-19280.yaml,high,100,4-good,active_probe_method
 CVE-2020-22164.yaml,high,100,4-good,active_probe_path
-CVE-2020-22166.yaml,high,100,4-good,active_probe_method|single_weak_word_matcher|active_probe_path
 CVE-2020-22169.yaml,high,100,4-good,single_weak_word_matcher|active_probe_method
-CVE-2020-22171.yaml,high,100,4-good,active_probe_method|single_weak_word_matcher|active_probe_path
 CVE-2020-22172.yaml,high,100,4-good,active_probe_method
 CVE-2020-22173.yaml,high,100,4-good,active_probe_method
-CVE-2020-22176.yaml,high,100,4-good,active_probe_method|single_weak_word_matcher
 CVE-2020-28186.yaml,high,100,4-good,active_probe_method
 CVE-2020-29166.yaml,high,100,4-good,active_probe_path|active_probe_method
 CVE-2020–26073_1.yaml,high,100,4-good,cve_tagged_missing_cve_id|strong_and_matchers|has_regex_matcher|active_probe_path
@@ -3472,7 +3449,6 @@ CVE-2022-29709.yaml,high,100,4-good,active_probe_method
 CVE-2022-30781.yaml,high,100,4-good,active_probe_path|active_probe_method
 CVE-2022-36225.yaml,high,100,4-good,active_probe_method
 CVE-2023-2105.yaml,high,100,4-good,active_probe_method
-CVE-2023-37649.yaml,high,100,4-good,active_probe_method|single_weak_word_matcher|active_probe_path
 CVE-2023-49799.yaml,high,100,4-good,strong_and_matchers|active_probe_method
 CVE-2024-11667.yaml,high,100,4-good,strong_and_matchers|single_weak_word_matcher|has_regex_matcher|active_probe_path
 CVE-2024-42327.yaml,high,100,4-good,cve_tagged_missing_cve_id|active_probe_method
@@ -3484,7 +3460,6 @@ CVE-2026-44581.yaml,high,100,4-good,strong_and_matchers|has_regex_matcher
 DESER-bitrix-deserialization.yaml,high,100,4-good,active_probe_method
 LFI-bitrix-path-traversal.yaml,high,100,4-good,active_probe_path|active_probe_method|single_weak_word_matcher
 SQLI-bitrix-sql-injection.yaml,high,100,4-good,active_probe_method|active_probe_path
-SSRF-bitrix-ssrf-advanced.yaml,high,100,4-good,active_probe_path|single_weak_word_matcher|active_probe_method
 XXE-bitrix-xxe-vulnerabilities.yaml,high,100,4-good,active_probe_method
 apache-doris-fe-api-anonymous.yaml,high,100,4-good,strong_and_matchers|has_regex_matcher|active_probe_path
 apache-pinot-controller-api-anonymous-tables.yaml,high,100,4-good,strong_and_matchers|has_regex_matcher|active_probe_path
@@ -3556,6 +3531,7 @@ api-exposure-detection.yaml,medium,45,2-review,or_condition_matchers|active_prob
 bitrix-translator-rce.yaml,medium,45,2-review,or_condition_matchers|active_probe_path
 cms-detect.yaml,medium,45,2-review,or_condition_matchers|active_probe_path
 cve-2018-8006-3631.yaml,medium,45,2-review,cve_tagged_missing_cve_id|single_weak_word_matcher|active_probe_path
+cve-2020-5412-5170.yaml,medium,45,2-review,cve_tagged_missing_cve_id|single_weak_word_matcher|active_probe_path
 express-lfr-post.yaml,medium,45,2-review,or_condition_matchers|active_probe_path
 programming-language-detect.yaml,medium,45,2-review,or_condition_matchers|active_probe_path
 CVE-2016-6210.yaml,medium,50,3-acceptable,no_http_block
@@ -3702,7 +3678,6 @@ CVE-2018-11409-2.yaml,medium,60,3-acceptable,cve_tagged_missing_cve_id
 CVE-2018-11759-1.yaml,medium,60,3-acceptable,cve_tagged_missing_cve_id
 CVE-2018-11759-2.yaml,medium,60,3-acceptable,cve_tagged_missing_cve_id
 CVE-2018-15473.yaml,medium,60,3-acceptable,no_http_block
-CVE-2018-7248.yaml,medium,60,3-acceptable,single_weak_word_matcher|active_probe_path
 CVE-2019-17503-1.yaml,medium,60,3-acceptable,cve_tagged_missing_cve_id
 CVE-2019-17503-2.yaml,medium,60,3-acceptable,cve_tagged_missing_cve_id
 CVE-2019-20141-4075.yaml,medium,60,3-acceptable,cve_tagged_missing_cve_id|active_probe_path
@@ -3732,7 +3707,6 @@ CVE-2024-32877.yaml,medium,60,3-acceptable,cve_tagged_missing_cve_id|active_prob
 Detect_Citrix_Login_Page.yaml,medium,60,3-acceptable,single_weak_word_matcher|active_probe_path
 EOffice_mysql_config_information_leak.yaml,medium,60,3-acceptable,strong_and_matchers|single_weak_word_matcher
 Express-LFR-json-2.yaml,medium,60,3-acceptable,or_condition_matchers|active_probe_method
-NSFOCUS_SAS.yaml,medium,60,3-acceptable,single_weak_word_matcher|active_probe_path
 Search_for_phpmyadmin_setup_page.yaml,medium,60,3-acceptable,single_weak_word_matcher|active_probe_path
 anbo-fileRead.yaml,medium,60,3-acceptable,single_weak_word_matcher|active_probe_path
 cve-2018-1247-3244.yaml,medium,60,3-acceptable,cve_tagged_missing_cve_id|active_probe_path
@@ -3821,6 +3795,7 @@ CVE-2021-22141.yaml,medium,65,3-acceptable,active_probe_path
 CVE-2021-23385.yaml,medium,65,3-acceptable,active_probe_path
 CVE-2021-36760.yaml,medium,65,3-acceptable,active_probe_path
 CVE-2021-37498.yaml,medium,65,3-acceptable,active_probe_path
+CVE-2021-39413.yaml,medium,65,3-acceptable,excessive_path_sweep|active_probe_path
 CVE-2021-43446.yaml,medium,65,3-acceptable,active_probe_path
 CVE-2022-0560.yaml,medium,65,3-acceptable,active_probe_path
 CVE-2022-1774.yaml,medium,65,3-acceptable,active_probe_path
@@ -3837,12 +3812,12 @@ CVE-2023-38998.yaml,medium,65,3-acceptable,active_probe_path
 CVE-2023-39360.yaml,medium,65,3-acceptable,active_probe_path
 CVE-2023-41080.yaml,medium,65,3-acceptable,active_probe_path
 CVE-2023-52274.yaml,medium,65,3-acceptable,active_probe_path
-CVE-2024-3135.yaml,medium,65,3-acceptable,
 CVE-2024-4704.yaml,medium,65,3-acceptable,active_probe_path
 CVE-2024-5550-H2O.yaml,medium,65,3-acceptable,
 CVE-2024-7156.yaml,medium,65,3-acceptable,active_probe_path
 CVE-2026-25527.yaml,medium,65,3-acceptable,
 CVE-2026-44572.yaml,medium,65,3-acceptable,
+Git-logs-found.yaml,medium,65,3-acceptable,excessive_path_sweep|active_probe_path
 Linux-bashrc-file.yaml,medium,65,3-acceptable,active_probe_path
 OR.yaml,medium,65,3-acceptable,active_probe_path
 RXSS-Test.yaml,medium,65,3-acceptable,active_probe_path
@@ -3874,17 +3849,18 @@ cloudtrail-logfile-integrity-validation.yaml,medium,65,3-acceptable,
 cloudwatch-events-mfa.yaml,medium,65,3-acceptable,
 cloudwatch-events-not-used.yaml,medium,65,3-acceptable,
 commmng-upload-mail-file.yaml,medium,65,3-acceptable,
+config-ini.yaml,medium,65,3-acceptable,excessive_path_sweep|active_probe_path
 connect-proxy.yaml,medium,65,3-acceptable,
 csp-weakness-sink-correlation.yaml,medium,65,3-acceptable,active_probe_path
 custom-grafana-default-login.yaml,medium,65,3-acceptable,
 cve-2017-14537-2935.yaml,medium,65,3-acceptable,cve_tagged_missing_cve_id|has_regex_matcher
 cve-2018-1247-3241.yaml,medium,65,3-acceptable,active_probe_path
 cve-2020-24579-4831.yaml,medium,65,3-acceptable,cve_tagged_missing_cve_id|has_regex_matcher
-cve-2020-5412-5170.yaml,medium,65,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|active_probe_path
 cve-2020-8091-5272.yaml,medium,65,3-acceptable,cve_tagged_missing_cve_id|strong_and_matchers|single_weak_word_matcher|active_probe_path
 dell-remote-power-management-default-login.yaml,medium,65,3-acceptable,
 dom-xss-web-message.yaml,medium,65,3-acceptable,active_probe_path
 enable-s3-bucketkeys.yaml,medium,65,3-acceptable,
+exposed-api-docs_1.yaml,medium,65,3-acceptable,excessive_path_sweep|active_probe_path
 exposed-kibana-1.yaml,medium,65,3-acceptable,
 exposed-kibana-2.yaml,medium,65,3-acceptable,
 exposed-kibana1.yaml,medium,65,3-acceptable,
@@ -3894,6 +3870,7 @@ exposed-sqlite-manager-1.yaml,medium,65,3-acceptable,
 exposed-sqlite-manager-2.yaml,medium,65,3-acceptable,
 exposed-sqlite-manager1.yaml,medium,65,3-acceptable,
 exposed-sqlite-manager2.yaml,medium,65,3-acceptable,
+exposed-swagger-ui.yaml,medium,65,3-acceptable,excessive_path_sweep|active_probe_path
 finecms-fileDownload.yaml,medium,65,3-acceptable,active_probe_path
 finereport-path-traversal-1.yaml,medium,65,3-acceptable,
 finereport-path-traversal-2.yaml,medium,65,3-acceptable,
@@ -3902,6 +3879,7 @@ finereport-path-traversal2.yaml,medium,65,3-acceptable,
 fr_remote_design_file_upload.yaml,medium,65,3-acceptable,
 gbk-crlf-injection.yaml,medium,65,3-acceptable,active_probe_path
 general-tokens-7585.yaml,medium,65,3-acceptable,active_probe_path
+git-search-logs.yaml,medium,65,3-acceptable,excessive_path_sweep|active_probe_path
 go-swagger-api-leak.yaml,medium,65,3-acceptable,
 grails-database-admin-console-1.yaml,medium,65,3-acceptable,
 grails-database-admin-console-2.yaml,medium,65,3-acceptable,
@@ -3990,7 +3968,9 @@ wcp-via-query-string.yaml,medium,65,3-acceptable,active_probe_path
 weasis-detect-miot.yaml,medium,65,3-acceptable,or_condition_matchers|has_regex_matcher|active_probe_path
 weblogic-servlet-xss.yaml,medium,65,3-acceptable,
 widgets.yaml,medium,65,3-acceptable,active_probe_path
+xss-injection-swagger.yaml,medium,65,3-acceptable,excessive_path_sweep|active_probe_path
 xss-rails-post.yaml,medium,65,3-acceptable,
+xss-reflected-vulnerability.yaml,medium,65,3-acceptable,excessive_path_sweep|active_probe_path
 xss-svg-path.yaml,medium,65,3-acceptable,active_probe_path
 yongyou-nc-beanshell-detect.yaml,medium,65,3-acceptable,
 CORS-valid-end-name.yaml,medium,70,3-acceptable,has_regex_matcher
@@ -4401,7 +4381,6 @@ CVE-2021-38183.yaml,medium,75,4-good,active_probe_path
 CVE-2021-38263.yaml,medium,75,4-good,active_probe_path
 CVE-2021-38559.yaml,medium,75,4-good,active_probe_path
 CVE-2021-39118.yaml,medium,75,4-good,active_probe_path
-CVE-2021-39413.yaml,medium,75,4-good,active_probe_path
 CVE-2021-40492.yaml,medium,75,4-good,active_probe_path
 CVE-2021-40637.yaml,medium,75,4-good,active_probe_path
 CVE-2021-40875-1.yaml,medium,75,4-good,
@@ -4581,7 +4560,6 @@ Find_ProfileService.yaml,medium,75,4-good,active_probe_path
 Find_adminer_dashboard.yaml,medium,75,4-good,active_probe_path
 Find_killswitch_dashboard.yaml,medium,75,4-good,active_probe_path
 Finds-actuator.yaml,medium,75,4-good,active_probe_path
-Git-logs-found.yaml,medium,75,4-good,active_probe_path
 H3C-SecPath-unauth.yaml,medium,75,4-good,active_probe_path
 IBM_InfoPrint_Directory_Traversal.yaml,medium,75,4-good,active_probe_path
 INFO-2025-06614-bitrix-show-include-exec-time.yaml,medium,75,4-good,active_probe_path
@@ -4642,7 +4620,6 @@ coldfusion-debug-xss-2.yaml,medium,75,4-good,strong_and_matchers
 coldfusion-debug-xss1.yaml,medium,75,4-good,strong_and_matchers
 coldfusion-debug-xss2.yaml,medium,75,4-good,strong_and_matchers
 config-database-info.yaml,medium,75,4-good,active_probe_path
-config-ini.yaml,medium,75,4-good,active_probe_path
 custom-data-alert-engine-service-detect.yaml,medium,75,4-good,active_probe_path
 custom-jasper-path-traversal-detect.yaml,medium,75,4-good,active_probe_path
 custom-microsoft-ssrf-detect.yaml,medium,75,4-good,active_probe_path
@@ -4671,17 +4648,12 @@ exposed-alps-spring-3.yaml,medium,75,4-good,strong_and_matchers
 exposed-alps-spring1.yaml,medium,75,4-good,strong_and_matchers
 exposed-alps-spring2.yaml,medium,75,4-good,strong_and_matchers
 exposed-alps-spring3.yaml,medium,75,4-good,strong_and_matchers
-exposed-api-docs_1.yaml,medium,75,4-good,active_probe_path
 exposed-jira.yaml,medium,75,4-good,active_probe_path
 exposed-laravel-horizon.yaml,medium,75,4-good,active_probe_path
 exposed-pagespeed-global-admin.yaml,medium,75,4-good,active_probe_path
-exposed-swagger-ui.yaml,medium,75,4-good,active_probe_path
 facebook-takeover.yaml,medium,75,4-good,active_probe_path
 file-manager-exposed.yaml,medium,75,4-good,active_probe_path
 find-config-xml.yaml,medium,75,4-good,active_probe_path
-gateway-url-override-ssrf.yaml,medium,75,4-good,
-git-folder.yaml,medium,75,4-good,active_probe_path
-git-search-logs.yaml,medium,75,4-good,active_probe_path
 h2-console.yaml,medium,75,4-good,active_probe_path
 haproxy-stats-page-exposed.yaml,medium,75,4-good,active_probe_path
 ibm-friendly-path-exposure-1.yaml,medium,75,4-good,strong_and_matchers
@@ -4788,9 +4760,7 @@ users-xml.yaml,medium,75,4-good,active_probe_path
 web-xml-Exposed.yaml,medium,75,4-good,active_probe_path
 wems-xss.yaml,medium,75,4-good,active_probe_path
 wicket-vulnerabilities.yaml,medium,75,4-good,active_probe_path
-xss-injection-swagger.yaml,medium,75,4-good,active_probe_path
 xss-oracle.yaml,medium,75,4-good,active_probe_path
-xss-reflected-vulnerability.yaml,medium,75,4-good,active_probe_path
 xunchi-file-read.yaml,medium,75,4-good,active_probe_path
 zenphoto-installation-sensitive-info-1.yaml,medium,75,4-good,strong_and_matchers
 zenphoto-installation-sensitive-info-2.yaml,medium,75,4-good,strong_and_matchers
@@ -5293,6 +5263,7 @@ drupal_module-views-cross-site-scripting_1.yaml,medium,95,4-good,strong_and_matc
 exposed security questions.yaml,medium,95,4-good,has_regex_matcher|active_probe_method
 exposed-github.yaml,medium,95,4-good,strong_and_matchers|active_probe_path
 exposed-user-info-error-messages (2).yaml,medium,95,4-good,has_regex_matcher|active_probe_method
+git-folder.yaml,medium,95,4-good,active_probe_path
 graphql-depth-limit.yaml,medium,95,4-good,has_regex_matcher|active_probe_method
 nacos-permission-bypass-token.yaml,medium,95,4-good,strong_and_matchers|active_probe_path
 observium-panel-exposed.yaml,medium,95,4-good,strong_and_matchers|active_probe_path
@@ -5301,7 +5272,6 @@ openclaw-responses-api.yaml,medium,95,4-good,has_regex_matcher|active_probe_meth
 owasp-wstg-conf-11-public-cloud-storage.yaml,medium,95,4-good,strong_and_matchers|active_probe_path
 s3-sensitive-api.yaml,medium,95,4-good,strong_and_matchers
 1c-enterprise-version_1.yaml,medium,100,4-good,strong_and_matchers|has_regex_matcher|active_probe_path
-CSRF-bitrix-csrf-vulnerabilities.yaml,medium,100,4-good,active_probe_method
 CVE-2009-5046.yaml,medium,100,4-good,active_probe_path
 CVE-2018-15740.yaml,medium,100,4-good,active_probe_method
 CVE-2018-17784.yaml,medium,100,4-good,active_probe_path|single_weak_word_matcher
@@ -5315,7 +5285,6 @@ CVE-2020-5308.yaml,medium,100,4-good,active_probe_method
 CVE-2020-5842.yaml,medium,100,4-good,active_probe_method|active_probe_path
 CVE-2021-32160.yaml,medium,100,4-good,active_probe_method
 CVE-2021-44155.yaml,medium,100,4-good,active_probe_method
-CVE-2021-45286.yaml,medium,100,4-good,active_probe_path|active_probe_method
 CVE-2021-46163.yaml,medium,100,4-good,active_probe_method
 CVE-2022-0689.yaml,medium,100,4-good,active_probe_method
 CVE-2022-21261.yaml,medium,100,4-good,strong_and_matchers|has_regex_matcher
@@ -5327,7 +5296,6 @@ CVE-2023-27293.yaml,medium,100,4-good,active_probe_method
 CVE-2023-36941.yaml,medium,100,4-good,active_probe_method
 CVE-2023-36942.yaml,medium,100,4-good,active_probe_method
 CVE-2023-7200.yaml,medium,100,4-good,active_probe_method
-CVE-2024-0238.yaml,medium,100,4-good,active_probe_method
 CVE-2024-4382.yaml,medium,100,4-good,active_probe_method
 CVE-2026-44582.yaml,medium,100,4-good,strong_and_matchers|has_regex_matcher
 INFO-bitrix-info-disclosure-fixed.yaml,medium,100,4-good,strong_and_matchers|active_probe_path
@@ -5335,7 +5303,6 @@ INFO-bitrix-info-disclosure-precise.yaml,medium,100,4-good,strong_and_matchers|a
 INFO-bitrix-info-disclosure-simple.yaml,medium,100,4-good,strong_and_matchers|has_regex_matcher|active_probe_path
 INFO-bitrix-info-disclosure.yaml,medium,100,4-good,active_probe_path|strong_and_matchers
 INFO-bitrix-logs-precise.yaml,medium,100,4-good,strong_and_matchers|active_probe_path
-MULTI-bitrix-ultimate-checks.yaml,medium,100,4-good,or_condition_matchers|active_probe_path|active_probe_method|single_weak_word_matcher
 apache-server-info-disclosure.yaml,medium,100,4-good,has_regex_matcher|active_probe_path
 crlf-injection-header-reflection.yaml,medium,100,4-good,strong_and_matchers|has_regex_matcher|active_probe_path
 csp-effectively-disabled-unsafe-inline-eval.yaml,medium,100,4-good,strong_and_matchers|has_regex_matcher|active_probe_path
@@ -5593,7 +5560,6 @@ Config_file_exposure.yaml,low,55,3-acceptable,or_condition_matchers|active_probe
 baseurl.yaml,low,55,3-acceptable,or_condition_matchers|active_probe_path
 check-revealjs.yaml,low,55,3-acceptable,or_condition_matchers|active_probe_path
 cl-te-http-request-smuggling.yaml,low,55,3-acceptable,
-Bitrix_Full_Path_Disclosure.yaml,low,60,3-acceptable,single_weak_word_matcher|active_probe_path
 CVE-2021-22873-1.yaml,low,60,3-acceptable,cve_tagged_missing_cve_id
 CVE-2021-22873-2.yaml,low,60,3-acceptable,cve_tagged_missing_cve_id
 CVE-2021-22873-3.yaml,low,60,3-acceptable,cve_tagged_missing_cve_id
@@ -5601,7 +5567,6 @@ CVE-2021-22873-4.yaml,low,60,3-acceptable,cve_tagged_missing_cve_id
 CVE-2021-22873-5.yaml,low,60,3-acceptable,cve_tagged_missing_cve_id
 CVE-2021-22873-6.yaml,low,60,3-acceptable,cve_tagged_missing_cve_id
 CVE-2021-37704-1.yaml,low,60,3-acceptable,cve_tagged_missing_cve_id
-bitrix_full_path_disclosure.yaml,low,60,3-acceptable,single_weak_word_matcher|active_probe_path
 cve-2018-14574-3308.yaml,low,60,3-acceptable,cve_tagged_missing_cve_id|active_probe_path
 nginx-version-discovery.yaml,low,60,3-acceptable,single_weak_word_matcher|active_probe_path
 roundcube-detection.yaml,low,60,3-acceptable,or_condition_matchers|has_regex_matcher|active_probe_path
@@ -5611,6 +5576,7 @@ CVE-2020-11034-2.yaml,low,65,3-acceptable,cve_tagged_missing_cve_id|has_regex_ma
 Detect_SIEMENS_SIMATIC_HMI_Miniweb_login_panel.yaml,low,65,3-acceptable,active_probe_path
 Detect_Siemens_LOGO_8_PLC.yaml,low,65,3-acceptable,active_probe_path
 Slash-URL-Redirection.yaml,low,65,3-acceptable,active_probe_path
+Swagger.yaml,low,65,3-acceptable,excessive_path_sweep|active_probe_path
 Url-Redirection-Catcher.yaml,low,65,3-acceptable,active_probe_path
 aem-default-get-servlet-1.yaml,low,65,3-acceptable,
 aem-default-get-servlet-10.yaml,low,65,3-acceptable,
@@ -5819,6 +5785,7 @@ ssh-known-hosts-2.yaml,low,65,3-acceptable,
 ssh-known-hosts1.yaml,low,65,3-acceptable,
 ssh-known-hosts2.yaml,low,65,3-acceptable,
 stacktrace.yaml,low,65,3-acceptable,
+swagger-ui-config.yaml,low,65,3-acceptable,excessive_path_sweep|active_probe_path
 telerik-dialoghandler-detect1.yaml,low,65,3-acceptable,
 telerik-dialoghandler-detect10.yaml,low,65,3-acceptable,
 telerik-dialoghandler-detect11.yaml,low,65,3-acceptable,
@@ -5841,7 +5808,6 @@ ups-status2.yaml,low,65,3-acceptable,
 url-redirection-catcher.yaml,low,65,3-acceptable,active_probe_path
 vault-unsealed-unauth.yaml,low,65,3-acceptable,active_probe_path
 vpc-logging-not-enabled.yaml,low,65,3-acceptable,
-wp-userenum.yaml,low,65,3-acceptable,
 zipkin-exposure-1.yaml,low,65,3-acceptable,
 zipkin-exposure-2.yaml,low,65,3-acceptable,
 zipkin-exposure1.yaml,low,65,3-acceptable,
@@ -5958,7 +5924,6 @@ Graphql_Playground_Exposure.yaml,low,75,4-good,active_probe_path
 INFO-2025-06612-bitrix-composite-data.yaml,low,75,4-good,active_probe_path
 INFO-bitrix-sessid-get.yaml,low,75,4-good,active_probe_path
 INFO-bitrix-updater-log-disclosure.yaml,low,75,4-good,active_probe_path
-Swagger.yaml,low,75,4-good,active_probe_path
 WSO2MgmtConsole.yaml,low,75,4-good,active_probe_path
 apache-filename-brute-force-352.yaml,low,75,4-good,active_probe_path
 apache-spark-enviroment-exposure.yaml,low,75,4-good,active_probe_path
@@ -6123,7 +6088,6 @@ springboot-threaddump-1.yaml,low,75,4-good,strong_and_matchers
 springboot-threaddump-2.yaml,low,75,4-good,strong_and_matchers
 springboot-threaddump1.yaml,low,75,4-good,strong_and_matchers
 springboot-threaddump2.yaml,low,75,4-good,strong_and_matchers
-swagger-ui-config.yaml,low,75,4-good,active_probe_path
 symfony-phpinfo.yaml,low,75,4-good,active_probe_path
 unsafe-inline-check.yaml,low,75,4-good,active_probe_path
 uptimerobot-tk.yaml,low,75,4-good,active_probe_path
@@ -6340,7 +6304,6 @@ dns-template.yaml,info,50,3-acceptable,no_http_block
 dns-txt-query-example.yaml,info,50,3-acceptable,no_http_block
 dns-value-share-template-1.yaml,info,50,3-acceptable,no_http_block
 dns-value-share-template-2.yaml,info,50,3-acceptable,no_http_block
-dns-value-share-template-3.yaml,info,50,3-acceptable,single_weak_word_matcher
 express-xss.yaml,info,50,3-acceptable,no_http_block
 external-storage-interact.yaml,info,50,3-acceptable,no_http_block
 extract.yaml,info,50,3-acceptable,no_http_block
@@ -6538,8 +6501,6 @@ esm.sh.yaml,info,60,3-acceptable,single_weak_word_matcher|active_probe_path
 ez-net_portal.yaml,info,60,3-acceptable,single_weak_word_matcher|active_probe_path
 forms.yaml,info,60,3-acceptable,single_weak_word_matcher|active_probe_path
 fronius-datamanager.yaml,info,60,3-acceptable,or_condition_matchers|has_regex_matcher|active_probe_path
-get-all-ips.yaml,info,60,3-acceptable,single_weak_word_matcher|active_probe_path
-get-without-scheme.yaml,info,60,3-acceptable,single_weak_word_matcher|active_probe_path
 hg255s.yaml,info,60,3-acceptable,single_weak_word_matcher|active_probe_path
 hg532e.yaml,info,60,3-acceptable,single_weak_word_matcher|active_probe_path
 i3geo.yaml,info,60,3-acceptable,single_weak_word_matcher|active_probe_path
@@ -6558,7 +6519,6 @@ login-portal.yaml,info,60,3-acceptable,single_weak_word_matcher|active_probe_pat
 mesop.yaml,info,60,3-acceptable,single_weak_word_matcher|active_probe_path
 microsoft-online.yaml,info,60,3-acceptable,or_condition_matchers|active_probe_method
 mobsf.yaml,info,60,3-acceptable,single_weak_word_matcher|active_probe_path
-multimatch-value-share-template.yaml,info,60,3-acceptable,single_weak_word_matcher|active_probe_path
 netgear r6850 router.yaml,info,60,3-acceptable,single_weak_word_matcher|active_probe_path
 nextjs-version-detect.yaml,info,60,3-acceptable,or_condition_matchers|has_regex_matcher|active_probe_path
 nplug.yaml,info,60,3-acceptable,single_weak_word_matcher|active_probe_path
@@ -6985,6 +6945,7 @@ cluster_control.yaml,info,65,3-acceptable,active_probe_path
 cobranca.yaml,info,65,3-acceptable,active_probe_path
 cocoon.yaml,info,65,3-acceptable,active_probe_path
 commvault.yaml,info,65,3-acceptable,active_probe_path
+comprehensive-swagger-ui-version-detection.yaml,info,65,3-acceptable,excessive_path_sweep|active_probe_path
 concerto.yaml,info,65,3-acceptable,active_probe_path
 confluence_3.yaml,info,65,3-acceptable,active_probe_path
 content_server.yaml,info,65,3-acceptable,active_probe_path
@@ -7040,6 +7001,7 @@ fanruanoa-detect-1.yaml,info,65,3-acceptable,
 fanruanoa-detect-2.yaml,info,65,3-acceptable,
 fanruanoa-detect1.yaml,info,65,3-acceptable,
 fanruanoa-detect2.yaml,info,65,3-acceptable,
+fckeditor-upload.yaml,info,65,3-acceptable,excessive_path_sweep|active_probe_path
 fogproject.yaml,info,65,3-acceptable,active_probe_path
 forticlient_ems.yaml,info,65,3-acceptable,active_probe_path
 forticlientems.yaml,info,65,3-acceptable,active_probe_path
@@ -7501,6 +7463,7 @@ swagger-api-72.yaml,info,65,3-acceptable,
 swagger-api-8.yaml,info,65,3-acceptable,
 swagger-api-9.yaml,info,65,3-acceptable,
 swagger-api-9_2.yaml,info,65,3-acceptable,
+swagger-api-v2.yaml,info,65,3-acceptable,excessive_path_sweep|active_probe_path
 swagger-api11.yaml,info,65,3-acceptable,
 swagger-api15.yaml,info,65,3-acceptable,
 swagger-api16.yaml,info,65,3-acceptable,
@@ -7537,6 +7500,7 @@ swagger-api70.yaml,info,65,3-acceptable,
 swagger-api71.yaml,info,65,3-acceptable,
 swagger-api72.yaml,info,65,3-acceptable,
 swagger-api8.yaml,info,65,3-acceptable,
+swagger-panel.yaml,info,65,3-acceptable,excessive_path_sweep|active_probe_path
 swagger-ui-detect.yaml,info,65,3-acceptable,active_probe_path
 swagger_ui.yaml,info,65,3-acceptable,active_probe_path
 symantec-phishing-readiness-platform.yaml,info,65,3-acceptable,
@@ -8061,7 +8025,6 @@ collaboration_server.yaml,info,75,4-good,active_probe_path
 commerce.yaml,info,75,4-good,active_probe_path
 compact_5500r_firmware.yaml,info,75,4-good,active_probe_path
 compact_controller_100_firmware.yaml,info,75,4-good,active_probe_path
-comprehensive-swagger-ui-version-detection.yaml,info,75,4-good,active_probe_path
 conanfile-txt.yaml,info,75,4-good,active_probe_path
 condition-flow-extractors.yaml,info,75,4-good,active_probe_path
 config.php.new.yaml,info,75,4-good,active_probe_path
@@ -8179,7 +8142,6 @@ fastbee.yaml,info,75,4-good,active_probe_path
 fastly-takeover-7430.yaml,info,75,4-good,active_probe_path
 fatpipe-mpvpn-detect-7437.yaml,info,75,4-good,active_probe_path
 fatpipe-warp-detect-7439.yaml,info,75,4-good,active_probe_path
-fckeditor-upload.yaml,info,75,4-good,active_probe_path
 fieldpopupnewsletter.yaml,info,75,4-good,active_probe_path
 file-manager.yaml,info,75,4-good,active_probe_path
 flatpress.yaml,info,75,4-good,active_probe_path
@@ -8291,7 +8253,6 @@ jira-unauthenticated-popular-filters.yaml,info,75,4-good,active_probe_path
 jitsi-meet-8342.yaml,info,75,4-good,active_probe_path
 jolokia-8368.yaml,info,75,4-good,active_probe_path
 joomla!.yaml,info,75,4-good,active_probe_path
-joomla-version-disclosure.yaml,info,75,4-good,active_probe_path
 journyx.yaml,info,75,4-good,active_probe_path
 jsherp.yaml,info,75,4-good,active_probe_path
 jux_real_estate.yaml,info,75,4-good,active_probe_path
@@ -8554,8 +8515,6 @@ strapi.yaml,info,75,4-good,active_probe_path
 stridercd-detection.yaml,info,75,4-good,active_probe_path
 superset.yaml,info,75,4-good,active_probe_path
 sv-cpt-mc310_firmware.yaml,info,75,4-good,active_probe_path
-swagger-api-v2.yaml,info,75,4-good,active_probe_path
-swagger-panel.yaml,info,75,4-good,active_probe_path
 swift_performance_lite.yaml,info,75,4-good,active_probe_path
 syncserver_s650.yaml,info,75,4-good,active_probe_path
 sysaid-help-desk.yaml,info,75,4-good,active_probe_path
@@ -8802,7 +8761,6 @@ facebook.yaml,info,80,4-good,has_regex_matcher|active_probe_path
 file-upload.yaml,info,80,4-good,has_regex_matcher|active_probe_path
 firewall.yaml,info,80,4-good,has_regex_matcher|active_probe_path
 flexnet_publisher.yaml,info,80,4-good,has_regex_matcher|active_probe_path
-flow-hide-matcher.yaml,info,80,4-good,single_weak_word_matcher|active_probe_path
 flowise.yaml,info,80,4-good,has_regex_matcher|active_probe_path
 flowpaper.yaml,info,80,4-good,has_regex_matcher|active_probe_path
 foreman-detect.yaml,info,80,4-good,has_regex_matcher|active_probe_path
@@ -9262,7 +9220,6 @@ limit-max-auth-attempts_1.yaml,unknown,50,3-acceptable,no_http_block
 jamf-pro.yaml,unknown,55,3-acceptable,
 CVE-2022-26911.yaml,unknown,65,3-acceptable,
 Joomla_version.yaml,unknown,65,3-acceptable,active_probe_path
-dummy-raw.yaml,unknown,65,3-acceptable,
 iiop.yaml,unknown,65,3-acceptable,
 CVE-2010-3863.yaml,unknown,70,3-acceptable,cve_tagged_missing_cve_id|active_probe_path
 File upload - Double extensions.yaml,unknown,70,3-acceptable,has_regex_matcher
